@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../src/components/NavBar/NavBar.scss"
+    ],
+    "names": [],
+    "file": "NavBar.min.css"
+}

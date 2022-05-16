@@ -1,5 +1,5 @@
 import './components/NavBar/NavBar';
-/* import './App.scss'; */
+import './App.scss';
 import ResponsiveNavBar from './components/NavBar/NavBar';
 
 

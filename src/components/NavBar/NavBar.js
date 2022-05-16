@@ -1,4 +1,4 @@
-/* import * as React from 'react';
+import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -11,10 +11,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
+import TsunamiIcon from '@mui/icons-material/Tsunami';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = ['Home', 'Products', 'Help'];
+const settings = ['Profile','Logout'];
 
 const ResponsiveNavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -37,9 +38,9 @@ const ResponsiveNavBar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="xl">
+      <Container maxWidth="l">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <TsunamiIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -50,12 +51,12 @@ const ResponsiveNavBar = () => {
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
               fontWeight: 700,
-              letterSpacing: '.3rem',
+              letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            k-SURF
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -94,7 +95,7 @@ const ResponsiveNavBar = () => {
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <TsunamiIcon sx={{ display: { xs: 'flex', md: 'none', }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -102,7 +103,7 @@ const ResponsiveNavBar = () => {
             href=""
             sx={{
               mr: 2,
-              display: { xs: 'flex', md: 'none' },
+              display: { xs: 'flex', md: 'none',justifyContent: 'start' },
               flexGrow: 1,
               fontFamily: 'monospace',
               fontWeight: 700,
@@ -111,9 +112,9 @@ const ResponsiveNavBar = () => {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            k-SURF
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
@@ -124,7 +125,7 @@ const ResponsiveNavBar = () => {
               </Button>
             ))}
           </Box>
-
+          
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -154,9 +155,10 @@ const ResponsiveNavBar = () => {
               ))}
             </Menu>
           </Box>
+          <ShoppingCartIcon sx={{ display: 'flex',ml: 2, mr: 1 }} />
         </Toolbar>
       </Container>
     </AppBar>
   );
 };
-export default ResponsiveNavBar; */
+export default ResponsiveNavBar;
