@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './NavBar.scss';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -38,7 +39,7 @@ const ResponsiveNavBar = () => {
 
   return (
     <AppBar position="static">
-      <Container maxWidth="l">
+      <Container maxWidth="l" className='NavBar'>
         <Toolbar disableGutters>
           <TsunamiIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
@@ -95,7 +96,7 @@ const ResponsiveNavBar = () => {
               ))}
             </Menu>
           </Box>
-          <TsunamiIcon sx={{ display: { xs: 'flex', md: 'none', }, mr: 1 }} />
+          <TsunamiIcon sx={{ display: { xs: 'flex', md: 'none', }, mr: 1 ,fontSize:'large'}} />
           <Typography
             variant="h5"
             noWrap
@@ -155,7 +156,9 @@ const ResponsiveNavBar = () => {
               ))}
             </Menu>
           </Box>
-          <ShoppingCartIcon sx={{ display: 'flex',ml: 2, mr: 1 }} />
+          <Button className='Cart' sx={{ display: 'flex', }}>
+            <ShoppingCartIcon/>
+          </Button>
         </Toolbar>
       </Container>
     </AppBar>
