@@ -14,8 +14,9 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import TsunamiIcon from '@mui/icons-material/Tsunami';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ButtomBar from './ButtomBar/ButtomBar'
 
-const pages = ['Home', 'Products', 'Help'];
+const pages = ['Store', 'Help'];
 const settings = ['Profile','Logout'];
 
 const ResponsiveNavBar = () => {
@@ -38,6 +39,7 @@ const ResponsiveNavBar = () => {
   };
 
   return (
+
     <AppBar position="static">
       <Container maxWidth="l" className='NavBar'>
         <Toolbar disableGutters>
@@ -72,6 +74,7 @@ const ResponsiveNavBar = () => {
               <MenuIcon />
             </IconButton>
             <Menu
+              className='ResponsiveMenu'
               id="menu-appbar"
               anchorEl={anchorElNav}
               anchorOrigin={{
@@ -89,9 +92,10 @@ const ResponsiveNavBar = () => {
                 display: { xs: 'block', md: 'none' },
               }}
             >
+              <ButtomBar></ButtomBar>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+                  <Typography textAlign="center" className='ButtomBar' >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -115,9 +119,12 @@ const ResponsiveNavBar = () => {
           >
             k-SURF
           </Typography>
+          
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>
+            <ButtomBar></ButtomBar>
             {pages.map((page) => (
               <Button
+                className='ButtomBar'
                 key={page}
                 onClick={handleCloseNavMenu}
                 sx={{ my: 2, color: 'white', display: 'block' }}
@@ -126,7 +133,7 @@ const ResponsiveNavBar = () => {
               </Button>
             ))}
           </Box>
-          
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -165,3 +172,4 @@ const ResponsiveNavBar = () => {
   );
 };
 export default ResponsiveNavBar;
+
