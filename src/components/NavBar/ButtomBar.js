@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
+
 export default function BasicMenu() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
@@ -17,8 +18,9 @@ export default function BasicMenu() {
   return (
     <div>
       <Button
-        sx={{ my: 2, display: 'block' }}
-        className='ButtomBar'
+        disableRipple
+        className='buttom_bar'
+        sx={{display: 'block' }}
         id="basic-button"
         aria-controls={open ? 'basic-menu' : undefined}
         aria-haspopup="true"

@@ -1,5 +1,7 @@
 import * as React from 'react';
 import './NavBar.scss';
+import './ButtomBar.scss';
+import ButtomBar from './ButtomBar';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -14,7 +16,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import TsunamiIcon from '@mui/icons-material/Tsunami';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import ButtomBar from './ButtomBar/ButtomBar'
 
 const pages = ['Store', 'Help'];
 const settings = ['Profile','Logout'];
@@ -95,7 +96,7 @@ const ResponsiveNavBar = () => {
               <ButtomBar></ButtomBar>
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" className='ButtomBar' >{page}</Typography>
+                  <Typography textAlign="center" className='buttom_bar' >{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
@@ -124,10 +125,11 @@ const ResponsiveNavBar = () => {
             <ButtomBar></ButtomBar>
             {pages.map((page) => (
               <Button
-                className='ButtomBar'
+                disableRipple
+                className='buttom_bar'
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
+                sx={{display: 'block' }}
               >
                 {page}
               </Button>
@@ -163,7 +165,7 @@ const ResponsiveNavBar = () => {
               ))}
             </Menu>
           </Box>
-          <Button className='Cart' sx={{ display: 'flex', }}>
+          <Button disableRipple className='Cart' sx={{ display: 'flex', }}>
             <ShoppingCartIcon/>
           </Button>
         </Toolbar>

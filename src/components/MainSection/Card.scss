@@ -1,0 +1,13 @@
+.card_item{
+   .surfboards_galerry{
+        display: flex;
+        flex-direction: column;
+       .sufrboards_img {
+           width: 100%;
+       } 
+       .buy_buttom{
+          margin-top: 15px;
+       }
+    } 
+}
+
