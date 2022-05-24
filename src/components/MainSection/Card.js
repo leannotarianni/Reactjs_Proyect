@@ -6,6 +6,11 @@ import CardContent from '@mui/material/CardContent';
 import ItemCount from './ItemCount';
 
 const CardItem = ({image, title,price,stock}) => {
+    
+    const onAdd =(count)=>{
+        console.log(count)
+    }
+
     return (
         <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >
             <CardContent className="card_item">
@@ -15,7 +20,7 @@ const CardItem = ({image, title,price,stock}) => {
                     </div>
                     <p>{title}</p>
                     <span>${price} </span>
-                    <ItemCount stock={stock}></ItemCount>
+                    <ItemCount stock={stock} onAdd={onAdd} />
                 </div>
             </CardContent>
         </Card>

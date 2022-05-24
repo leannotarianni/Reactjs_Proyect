@@ -6,7 +6,7 @@ import { Button } from '@mui/material';
 import './Cardlist'
 import './Card'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, onAdd}) => {
     const [Count,setCount] = useState (1)
     /* const [Stock, setStock] = useState (5)  */
 
@@ -21,10 +21,6 @@ const ItemCount = ({stock}) => {
         setCount(Count - 1)
     }
 
-    const onAdd =()=> {
-        console.log(Count)
-    }
-
     return (
         <>
         <div className='item-count'>
@@ -33,7 +29,7 @@ const ItemCount = ({stock}) => {
             <Button disableRipple onClick={addCount}>+</Button>
         </div>
         <div>
-        <Button onClick={onAdd} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
+        <Button onClick={()=> onAdd(Count)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
         </div>
        </>
     )
