@@ -1,11 +1,11 @@
 import * as React from 'react';
 import './Card.scss'
+import './ItemCount'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Button } from '@mui/material';
+import ItemCount from './ItemCount';
 
-
-const CardItem = ({image, title,price}) => {
+const CardItem = ({image, title,price,stock}) => {
     return (
         <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >
             <CardContent className="card_item">
@@ -15,7 +15,7 @@ const CardItem = ({image, title,price}) => {
                     </div>
                     <p>{title}</p>
                     <span>${price} </span>
-                    <Button variant={'outlined'} className='buy_buttom'>Buy</Button>
+                    <ItemCount stock={stock}></ItemCount>
                 </div>
             </CardContent>
         </Card>

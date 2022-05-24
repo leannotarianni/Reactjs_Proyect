@@ -1,11 +1,11 @@
 import * as React from 'react';
-import './ButtomBar.scss'
+import './buttom-bar.scss'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 
-export default function BasicMenu() {
+export default function ButtomBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
