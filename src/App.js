@@ -1,7 +1,7 @@
 import './components/NavBar/NavBar';
 import './App.scss';
 import ResponsiveNavBar from './components/NavBar/NavBar';
-import CardList from './components/MainSection/Cardlist';
+import CardListContainer from './components/MainSection/CardListContainer';
 import { Container} from '@mui/material';
 
 function App() {
@@ -10,8 +10,9 @@ function App() {
     <div className="App">
       <ResponsiveNavBar/>
       <Container maxWidth="xxl">
-        <CardList title={'Prime Selection'}></CardList>    
+        <CardListContainer title={'Prime Selection'}></CardListContainer>    
       </Container>
+      
     </div>
   );
 }

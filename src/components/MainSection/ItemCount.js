@@ -3,7 +3,7 @@ import './Card.scss'
 import './item-count.scss'
 import { useState } from 'react';
 import { Button } from '@mui/material';
-import './Cardlist'
+import './CardListContainer'
 import './Card'
 
 const ItemCount = ({stock, onAdd}) => {

@@ -5,8 +5,8 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import ItemCount from './ItemCount';
 
-const CardItem = ({image, title,price,stock}) => {
-    
+const CardItem = ({product}) => {
+    const {title,image,stock,price} = product
     const onAdd =(count)=>{
         console.log(count)
     }
