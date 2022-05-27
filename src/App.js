@@ -10,7 +10,7 @@ function App() {
     <div className="App">
       <ResponsiveNavBar/>
       <Container maxWidth="xxl">
-        <CardListContainer title={'Prime Selection'}></CardListContainer>    
+        <CardListContainer title={"Prime selection"}></CardListContainer>
       </Container>
       
     </div>

@@ -3,18 +3,19 @@ import CardItem from './Card';
 import {Grid } from '@mui/material';
 
 
-const CardList =({products})=> {
+const CardItemList =({title,products})=> {
     return(
         <>
         <div>
-            <h2>titulo</h2>
+            <h2>{title}</h2>
         </div>
         <Grid container spacing={2} className='galerry_container'>
             {
-                products.map( ({products})=>{
+                products.map( (product)=>{
+                    console.log(product)
                     return(
-                        <Grid item xs={12} sm={6} md={3} className="cards_gallery">
-                            <CardItem products={products} />
+                        <Grid product xs={12} sm={6} md={3} className="cards_gallery" key={product.id}>
+                            <CardItem product={product} />
                         </Grid>
                     )
                     
@@ -25,4 +26,4 @@ const CardList =({products})=> {
     )
 }
 
-export default CardList
+export default CardItemList
