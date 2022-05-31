@@ -1,12 +1,12 @@
-import { productsMock } from '../Data/productsMocks.js'
+import {productItem1} from '../Data/productsMocks'
 
 
-const getItems =()=>{
+const getItem =()=>{
     return new Promise((res, rej) => {
     let condition = true;
     if (condition) {
         setTimeout(() => {
-            res(productsMock)
+            res(productItem1)
         }, 2000);
     } else {
         rej("Error al cargar productos");
@@ -16,4 +16,4 @@ const getItems =()=>{
 
     
 
-export default getItems
+export default getItem

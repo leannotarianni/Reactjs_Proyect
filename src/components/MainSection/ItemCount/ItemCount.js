@@ -1,10 +1,8 @@
 import * as React from 'react';
-import './Card.scss'
-import './item-count.scss'
 import { useState } from 'react';
 import { Button } from '@mui/material';
-import './CardListContainer'
-import './Card'
+import './item-count.scss'
+
 
 const ItemCount = ({stock, onAdd}) => {
     const [Count,setCount] = useState (1)

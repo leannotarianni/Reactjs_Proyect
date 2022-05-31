@@ -1,6 +1,7 @@
 import * as React from 'react';
-import CardItem from './Card';
 import {Grid} from '@mui/material';
+import CardItem from '../Card/Card';
+
 
 
 const CardItemList =({title,products})=> {

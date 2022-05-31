@@ -1,4 +1,4 @@
-export const productsMock = [
+const productsMock = [
     {
         title: 'al merrick boddy quad',
         price: 10600,
@@ -28,3 +28,24 @@ export const productsMock = [
         stock: 12,
     }
 ]
+
+
+const productItem1 = {
+    title: 'al merrick boddy quad',
+    price: 10600,
+    image: 'al merrick boddy quad.jpg',
+    id: 1001,
+    stock: 5,   
+}
+
+const productItem2 = {
+    title: 'al merrick boddy quad',
+    price: 10600,
+    image: 'al merrick boddy quad.jpg',
+    id: 1001,
+    stock: 5,   
+}
+
+export default productsMock
+export {productItem1}
+export {productItem2}

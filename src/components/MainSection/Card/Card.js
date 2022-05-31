@@ -1,9 +1,10 @@
 import * as React from 'react';
-import './Card.scss'
-import './ItemCount'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import ItemCount from './ItemCount';
+import ItemCount from '../ItemCount/ItemCount';
+import './Card.scss';
+
+
 
 const CardItem = ({product}) => {
     const {title,image,stock,price} = product

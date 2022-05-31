@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
-import CardItemList from './CardItemList';
-import getItems from '../Fuctions/getItem'
+import CardItemList from '../CardItemList/CardItemList';
+import getItems from '../../../Fuctions/getItems'
 
 const CardListContainer =() => {
     
@@ -18,6 +18,7 @@ const CardListContainer =() => {
             setProducts(response)
         })
         .catch((err) => {
+            console.log("fallo la llamada.", err)
         })
         .finally( ()=> {
         })
