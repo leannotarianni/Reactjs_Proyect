@@ -10,7 +10,6 @@ import './Card.scss';
 
 const CardItem = ({product}) => {
     const {title,image,stock,price} = product
-    onAdd()
 
     return (
         <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >

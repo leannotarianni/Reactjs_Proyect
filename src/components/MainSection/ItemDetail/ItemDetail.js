@@ -5,18 +5,17 @@ import './item-detail.scss'
 
 const ItemDetail =({data})=> {
     const {title,image,stock,price} = data
-    onAdd()
 
     return(
             <Grid container>
                 <Grid container sx={{margin:3}} className="item-detail-card" >
-                <Grid div xs={12} sm={6} className='item-detail-img' >
+                <Grid item xs={12} sm={6} className='item-detail-img' >
                     <div>
                         <p>{title}</p>
                         <img src={`./${image}`}  alt={`./${title}`}/>  
                     </div> 
                 </Grid>
-                <Grid div xs={12} sm={6} className="item-detail-descripcion" >    
+                <Grid item xs={12} sm={6} className="item-detail-descripcion" >    
                     <div p >
                         <p>{title}</p>
                         <span>${price} </span>

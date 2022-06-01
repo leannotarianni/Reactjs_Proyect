@@ -14,7 +14,7 @@ const CardItemList =({title,products})=> {
             {
                 products.map( (product)=>{
                     return(
-                        <Grid product xs={12} sm={6} md={3} className="cards_gallery" key={product.id}>
+                        <Grid item xs={12} sm={6} md={3} className="cards_gallery" key={product.id}>
                             <CardItem product={product} />
                         </Grid>
                     )
