@@ -55,3 +55,8 @@
         },
     ]
  */
+
+/*     @media only screen and (min-width: 900px) {
+        color: white;
+        margin-top: 5px;
+    } */
