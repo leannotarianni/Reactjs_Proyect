@@ -5,7 +5,7 @@ import getItem from "../../../Fuctions/getItem"
 
 
 const ItemDetailContainer = () => {
-    const[product, setProduct] = useState([])
+    const[product, setProduct] = useState({})
 
     useEffect(()=>{
         getItem()
