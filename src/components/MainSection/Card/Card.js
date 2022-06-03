@@ -4,12 +4,13 @@ import CardContent from '@mui/material/CardContent';
 import ItemCount from '../ItemCount/ItemCount';
 import onAdd from '../../../Fuctions/onAdd';
 import './Card.scss';
+import { Link } from 'react-router-dom';
 
 
 
 
 const CardItem = ({product}) => {
-    const {title,image,stock,price} = product
+    const {title,image,stock,price,id} = product
 
     return (
         <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >
@@ -18,6 +19,7 @@ const CardItem = ({product}) => {
                     <div>
                       <img src={`./${image}`} className='sufrboards_img' alt={`./${title}`}/>
                     </div>
+                    <button><Link to={`/Products/${id}`} >Detail View</Link></button>
                     <p>{title}</p>
                     <span>${price} </span>
                     <ItemCount stock={stock} onAdd={onAdd} />
@@ -27,3 +29,4 @@ const CardItem = ({product}) => {
     )
 }
 export default CardItem
+

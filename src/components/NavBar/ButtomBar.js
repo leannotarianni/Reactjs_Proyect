@@ -3,7 +3,7 @@ import './buttom-bar.scss'
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-
+import { Link } from 'react-router-dom';
 
 export default function ButtomBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -38,7 +38,7 @@ export default function ButtomBar() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}>SURFBOARDS</MenuItem>
+        <MenuItem onClick={handleClose}><Link to={"/Products"}>SURFBOARDS</Link></MenuItem>
         <MenuItem onClick={handleClose}>SUP</MenuItem>
         <MenuItem onClick={handleClose}>BODYBOARDS</MenuItem>
         <MenuItem onClick={handleClose}>ACCESORIES</MenuItem>

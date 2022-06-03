@@ -1,6 +1,7 @@
 import * as React from 'react';
 import {Grid} from '@mui/material';
 import CardItem from '../Card/Card';
+import './card-item-list.scss';
 
 
 

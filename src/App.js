@@ -1,19 +1,23 @@
-import './components/NavBar/NavBar';
-import './App.scss';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import ResponsiveNavBar from './components/NavBar/NavBar';
-import CardListContainer from './components/MainSection/CardListContainer/CardListContainer';
-import ItemDetailContainer from './components/MainSection/ItemDetailContainer/ItemDetailConatiner';
-import { Container} from '@mui/material';
+import Home from './Pages/Home'
+import Products from './Pages/Products';
+import DetailProducts from './Pages/DetailProducts';
+import NotFound from './Pages/NotFound';
 
 function App() {
   return (
     
-    <div className="App">
-      <ResponsiveNavBar/>
-      <Container maxWidth="xxl">
-        <CardListContainer title={"Prime selection"}/>
-      </Container>
-      <ItemDetailContainer/>
+    <div>
+      <BrowserRouter>
+        <ResponsiveNavBar/>
+        <Routes>
+          <Route path='/' element={<Home />}></Route>
+          <Route path='/Products' element={<Products />}></Route>
+          <Route path='/Products/:id' element={<DetailProducts />}></Route>
+          <Route path='/*' element={<NotFound />}></Route>
+        </Routes>     
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import {productItem1} from '../Data/productsMocks'
+/* import {productItem1} from '../Data/productsMocks'
 
 
 const getItem =()=>{
@@ -16,4 +16,4 @@ const getItem =()=>{
 
     
 
-export default getItem
+export default getItem */
