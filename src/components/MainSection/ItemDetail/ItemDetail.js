@@ -12,7 +12,7 @@ const ItemDetail =({data})=> {
                 <Grid item xs={12} sm={6} className='item-detail-img' >
                     <div>
                         <p>{title}</p>
-                        <img src={`./${image}`}  alt={`./${title}`}/>  
+                        <img src={`/${image}`}  alt={`./${title}`}/>  
                     </div> 
                 </Grid>
                 <Grid item xs={12} sm={6} className="item-detail-descripcion" >    

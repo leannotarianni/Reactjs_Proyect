@@ -60,7 +60,7 @@ const ResponsiveNavBar = () => {
               textDecoration: 'none',
             }}
           >
-            k-SURF
+            WAVELOOS
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>

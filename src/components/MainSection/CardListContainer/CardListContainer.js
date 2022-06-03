@@ -7,9 +7,6 @@ const CardListContainer =() => {
     
     const [products, setProducts] = useState([])
     
-
-    getItems()
-
     // se muestre una sola vez
     useEffect(()=>{
         //llamado promesa

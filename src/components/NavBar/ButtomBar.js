@@ -38,8 +38,8 @@ export default function ButtomBar() {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem onClick={handleClose}><Link to={"/Products"}>SURFBOARDS</Link></MenuItem>
-        <MenuItem onClick={handleClose}>SUP</MenuItem>
+        <MenuItem onClick={handleClose}><Link to={`/Products/surfboards`}>SURFBOARDS</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to={`/Products/sup`}>SUP</Link></MenuItem>
         <MenuItem onClick={handleClose}>BODYBOARDS</MenuItem>
         <MenuItem onClick={handleClose}>ACCESORIES</MenuItem>
       </Menu>

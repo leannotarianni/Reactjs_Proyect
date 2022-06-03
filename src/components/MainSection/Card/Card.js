@@ -17,9 +17,9 @@ const CardItem = ({product}) => {
             <CardContent className="card_item">
                 <div className='surfboards_galerry'>
                     <div>
-                      <img src={`./${image}`} className='sufrboards_img' alt={`./${title}`}/>
+                      <img src={`/${image}`} className='sufrboards_img' alt={`./${title}`}/>
                     </div>
-                    <button><Link to={`/Products/${id}`} >Detail View</Link></button>
+                    <button><Link to={`/Product/${id}`} >Detail View</Link></button>
                     <p>{title}</p>
                     <span>${price} </span>
                     <ItemCount stock={stock} onAdd={onAdd} />

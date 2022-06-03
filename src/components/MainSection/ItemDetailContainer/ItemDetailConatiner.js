@@ -22,10 +22,12 @@ const ItemDetailContainer = () => {
         })
         .finally( ()=> {
         })  */
+        
         setProduct(productsFilter)
 
     },[])
 
+    
     return (
         <>
         <ItemDetail data={product}/>
