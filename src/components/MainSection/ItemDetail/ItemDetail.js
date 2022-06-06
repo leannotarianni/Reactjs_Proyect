@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material"
-import onAdd from "../../../Fuctions/onAdd"
+import onAdd from "../../../fuctions/onAdd"
 import ItemCount from "../ItemCount/ItemCount"
 import './item-detail.scss'
 

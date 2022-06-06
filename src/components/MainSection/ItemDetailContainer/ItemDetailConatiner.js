@@ -2,7 +2,7 @@ import {useEffect, useState} from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
 /* import getItems from "../../../Fuctions/getItems" */
 import { useParams } from "react-router-dom"
-import productsMock from "../../../Data/productsMocks"
+import productsMock from "../../../data/productsMocks"
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
         
         setProduct(productsFilter)
 
-    },[])
+    },[id])
 
     
     return (

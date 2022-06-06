@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
 import CardItemList from '../CardItemList/CardItemList';
-import getItems from '../../../Fuctions/getItems'
+import getItems from '../../../fuctions/getItems';
 
 const CardListContainer =() => {
     

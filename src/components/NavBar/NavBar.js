@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './NavBar.scss';
+import './nav-bar.scss';
 import './buttom-bar.scss'
 import ButtomBar from './ButtomBar';
 import AppBar from '@mui/material/AppBar';

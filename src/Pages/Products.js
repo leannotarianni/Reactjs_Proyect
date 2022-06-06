@@ -1,8 +1,7 @@
 import { Container} from '@mui/material';
-import CardListContainer from '../components/MainSection/CardListContainer/CardListContainer';
 import { useParams } from 'react-router-dom';
 import { useState } from 'react';
-import getItems from '../Fuctions/getItems';
+import getItems from '../fuctions/getItems';
 import { useEffect } from 'react';
 import CardItemList from '../components/MainSection/CardItemList/CardItemList';
 

@@ -1,4 +1,4 @@
-import productsMock from '../Data/productsMocks'
+import productsMock from "../data/productsMocks";
 
 
 const getItems =()=>{
