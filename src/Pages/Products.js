@@ -9,20 +9,12 @@ const Products =()=> {
     const [products, setProducts] = useState([])
     const {category} = useParams()
 
-    const filterByCategory =(array)=> {
-        return array.map( (item) => {
-         if(item.category == category)  {
-            return setProducts(products => [...products, item])
-         }
-        })
-        
-    }
 
     useEffect(()=>{
-        setProducts([])
+
         getItems()
         .then( (response) => {
-            filterByCategory(response)
+            setProducts( category ? response.filter( product => product.category === category) : response )
         })
         .catch((err) => {
             console.log("fallo la llamada.", err)

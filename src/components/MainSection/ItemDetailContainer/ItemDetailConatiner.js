@@ -1,30 +1,26 @@
 import {useEffect, useState} from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
-/* import getItems from "../../../Fuctions/getItems" */
+import getItems from "../../../fuctions/getItems"
 import { useParams } from "react-router-dom"
-import productsMock from "../../../data/productsMocks"
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
     const[product, setProduct] = useState({})
     
-    const productsFilter = productsMock.find((product)=>{
-        return product.id == id
-    })
 
     useEffect(()=>{
-         /* getItems()
+         getItems()
         .then( (response) => {
-            setProduct(response)
+            setProduct(response.find ((product)=>{
+                return product.id === parseInt(id)
+            }))
         })
         .catch((err) => {
             console.log("fallo la llamada.", err)
         })
         .finally( ()=> {
-        })  */
+        }) 
         
-        setProduct(productsFilter)
-
     },[id])
 
     
