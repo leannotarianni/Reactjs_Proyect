@@ -1,6 +1,6 @@
 import { Grid } from "@mui/material"
-import onAdd from "../../../fuctions/onAdd"
-import ItemCount from "../ItemCount/ItemCount"
+/* import onAdd from "../../../fuctions/onAdd"
+ */import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react"
 import { Button } from "@mui/material"
 import './item-detail.scss'
@@ -10,12 +10,11 @@ const ItemDetail =({data})=> {
     const {title,image,price} = data
     
     const [showButton, setShowButton] = useState(false)
-    /* const [quantity,setQuantity] = useState (1) */
 
-    /* const addProductToCart = () => {
-        console.log("producto agregado:", data)
-        console.log("cantidad:", )
-    } */
+    const onAdd =(data)=>{
+        setShowButton(true)
+        console.log(data)
+    }
 
     return(
             <Grid container>
@@ -31,7 +30,7 @@ const ItemDetail =({data})=> {
                         <p>{title}</p>
                         <span>${price} </span>
                         {!showButton ?
-                        <ItemCount /* setQuantity={setQuantity} */ setShowButton={setShowButton} data={data} onAdd={onAdd} 
+                        <ItemCount setShowButton={setShowButton} data={data} onAdd={onAdd} 
                         />
                         :                        
                         <Button variant={'outlined'}><Link to={'/Cart'}>Checkout</Link></Button>}

@@ -4,8 +4,14 @@ import { Button } from '@mui/material';
 import './item-count.scss'
 
 
-const ItemCount = ({setShowButton,data, onAdd}) => {
 
+const ItemCount = ({setShowButton,data,onAdd}) => {
+
+    //general
+    /* const onAdd =(data)=>{
+        setShowButton(true)
+        console.log(data)
+    } */
 
     const [quantity,setQuantity] = useState (1)
 
@@ -27,7 +33,7 @@ const ItemCount = ({setShowButton,data, onAdd}) => {
             <Button disableRipple onClick={addCount}>+</Button>
         </div>
         <div>
-        <Button onClick={()=> setShowButton(true)}  on variant={'outlined'} className='buy_buttom'>Add to cart</Button>
+        <Button onClick={()=> onAdd(quantity)}  on variant={'outlined'} className='buy_buttom'>Add to cart</Button>
         </div>
        </>
     )

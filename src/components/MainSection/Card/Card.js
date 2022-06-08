@@ -9,8 +9,12 @@ import { Link } from 'react-router-dom';
 
 
 
-const CardItem = ({product}) => {
-    const {title,image,stock,price,id} = product
+const CardItem = ({data}) => {
+    const {title,image,price,id} = data
+
+    const onAdd =(data)=>{
+        console.log(data)
+    }
 
     return (
         <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >
@@ -22,7 +26,7 @@ const CardItem = ({product}) => {
                     <button><Link to={`/Product/${id}`} >Detail View</Link></button>
                     <p>{title}</p>
                     <span>${price} </span>
-                    <ItemCount data={product} onAdd={onAdd} />
+                    <ItemCount data={data} onAdd={onAdd} />
                 </div>
             </CardContent>
         </Card>
