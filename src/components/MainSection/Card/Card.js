@@ -22,7 +22,7 @@ const CardItem = ({product}) => {
                     <button><Link to={`/Product/${id}`} >Detail View</Link></button>
                     <p>{title}</p>
                     <span>${price} </span>
-                    <ItemCount stock={stock} onAdd={onAdd} />
+                    <ItemCount data={product} onAdd={onAdd} />
                 </div>
             </CardContent>
         </Card>

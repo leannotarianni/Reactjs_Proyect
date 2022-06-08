@@ -1,10 +1,21 @@
 import { Grid } from "@mui/material"
 import onAdd from "../../../fuctions/onAdd"
 import ItemCount from "../ItemCount/ItemCount"
+import { useState } from "react"
+import { Button } from "@mui/material"
 import './item-detail.scss'
+import { Link } from "react-router-dom"
 
 const ItemDetail =({data})=> {
-    const {title,image,stock,price} = data
+    const {title,image,price} = data
+    
+    const [showButton, setShowButton] = useState(false)
+    /* const [quantity,setQuantity] = useState (1) */
+
+    /* const addProductToCart = () => {
+        console.log("producto agregado:", data)
+        console.log("cantidad:", )
+    } */
 
     return(
             <Grid container>
@@ -19,7 +30,12 @@ const ItemDetail =({data})=> {
                     <div p >
                         <p>{title}</p>
                         <span>${price} </span>
-                        <ItemCount stock={stock} onAdd={onAdd} />
+                        {!showButton ?
+                        <ItemCount /* setQuantity={setQuantity} */ setShowButton={setShowButton} data={data} onAdd={onAdd} 
+                        />
+                        :                        
+                        <Button variant={'outlined'}><Link to={'/Cart'}>Checkout</Link></Button>}
+                        
                         <ul>
                             <h3>CARACTERÍSTICAS</h3>
                             <li>Quad high performance.</li>

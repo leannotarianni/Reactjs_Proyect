@@ -13,7 +13,6 @@ function App() {
         <ResponsiveNavBar/>
         <Routes>
           <Route path='/' element={<Home />}></Route>
-          {/* <Route path='/Products' element={<Products />}></Route> */}
           <Route path='/Products/:category' element={<Products />}></Route>
           <Route path='/Product/:id' element={<DetailProducts />}></Route>
           <Route path='/*' element={<NotFound />}></Route>

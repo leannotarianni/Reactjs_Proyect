@@ -1,5 +1,5 @@
-const onAdd =(count)=>{
-    console.log(count)
+const onAdd =(data)=>{
+    console.log(data)
 }
 
 export default onAdd
