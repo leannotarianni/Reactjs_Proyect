@@ -1,3 +1,11 @@
+WaveLoos Proyect:
+
+This project aims to be an e-commerce application for the sale of aquatic equipment, such as surfing, sup, among others.
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
