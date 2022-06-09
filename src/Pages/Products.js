@@ -1,19 +1,20 @@
 import { Container} from '@mui/material';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect,useState } from 'react';
 import getItems from '../fuctions/getItems';
-import { useEffect } from 'react';
 import CardItemList from '../components/MainSection/CardItemList/CardItemList';
+import Loading from '../fuctions/loading';
 
 const Products =()=> {
     const [products, setProducts] = useState([])
     const {category} = useParams()
-
+    const [loading, setLoading]= useState(true)
 
     useEffect(()=>{
 
         getItems()
         .then( (response) => {
+            setLoading(false)
             setProducts( category ? response.filter( product => product.category === category) : response )
         })
         .catch((err) => {
@@ -25,13 +26,24 @@ const Products =()=> {
     },[category])
 
     return(
-        <div>
-            <Container maxWidth="xxl">
-                <CardItemList products={products}/>
-            </Container> 
-        </div>
+        <>
+        {
+            (loading)
         
-    )
+            ?
+
+            ( <Loading/> ) 
+        
+            :
+            <div>
+                <Container maxWidth="xxl">
+                    <CardItemList products={products}/>
+                </Container> 
+            </div>
+        }
+        </>
+        
+        )
 }
 
 export default Products

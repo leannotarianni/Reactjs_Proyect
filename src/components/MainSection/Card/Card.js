@@ -2,7 +2,7 @@ import * as React from 'react';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import ItemCount from '../ItemCount/ItemCount';
-import onAdd from '../../../fuctions/onAdd';
+/* import onAdd from '../../../fuctions/onAdd'; */
 import './card.scss';
 import { Link } from 'react-router-dom';
 

@@ -1,10 +1,8 @@
-import { Grid } from "@mui/material"
-/* import onAdd from "../../../fuctions/onAdd"
- */import ItemCount from "../ItemCount/ItemCount"
 import { useState } from "react"
-import { Button } from "@mui/material"
-import './item-detail.scss'
 import { Link } from "react-router-dom"
+import { Grid, Button } from "@mui/material"
+import './item-detail.scss'
+/* import onAdd from "../../../fuctions/onAdd"*/import ItemCount from "../ItemCount/ItemCount"
 
 const ItemDetail =({data})=> {
     const {title,image,price} = data
@@ -26,9 +24,9 @@ const ItemDetail =({data})=> {
                     </div> 
                 </Grid>
                 <Grid item xs={12} sm={6} className="item-detail-descripcion" >    
-                    <div p >
+                    <div>
                         <p>{title}</p>
-                        <span>${price} </span>
+                        <p>${price} </p>
                         {!showButton ?
                         <ItemCount setShowButton={setShowButton} data={data} onAdd={onAdd} 
                         />

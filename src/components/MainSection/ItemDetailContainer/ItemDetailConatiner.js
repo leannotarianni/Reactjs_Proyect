@@ -1,16 +1,19 @@
 import {useEffect, useState} from "react"
+import { useParams } from "react-router-dom"
 import ItemDetail from "../ItemDetail/ItemDetail"
 import getItems from "../../../fuctions/getItems"
-import { useParams } from "react-router-dom"
+import Loading from "../../../fuctions/loading"
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
     const[product, setProduct] = useState({})
-    
+    const [loading, setLoading]= useState(true)
+
 
     useEffect(()=>{
          getItems()
         .then( (response) => {
+            setLoading(false)
             setProduct(response.find ((product)=>{
                 return product.id === parseInt(id)
             }))
@@ -26,7 +29,17 @@ const ItemDetailContainer = () => {
     
     return (
         <>
-        <ItemDetail data={product}/>
+        {
+            (loading)
+        
+            ?
+
+            ( <Loading/> ) 
+        
+            :
+            
+            <ItemDetail data={product}/>
+        }
         </>
     )
 }
