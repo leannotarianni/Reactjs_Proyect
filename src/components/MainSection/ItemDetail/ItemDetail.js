@@ -2,17 +2,18 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { Grid, Button } from "@mui/material"
 import './item-detail.scss'
-/* import onAdd from "../../../fuctions/onAdd"*/import ItemCount from "../ItemCount/ItemCount"
+import ItemCount from "../ItemCount/ItemCount"
+/* import onAdd from "../../../fuctions/onAdd"*/
 
 const ItemDetail =({data})=> {
     const {title,image,price} = data
     
     const [showButton, setShowButton] = useState(false)
 
-    const onAdd =(data)=>{
+    /* const onAdd =(data)=>{
         setShowButton(true)
         console.log(data)
-    }
+    } */
 
     return(
             <Grid container>
@@ -28,7 +29,7 @@ const ItemDetail =({data})=> {
                         <p>{title}</p>
                         <p>${price} </p>
                         {!showButton ?
-                        <ItemCount setShowButton={setShowButton} data={data} onAdd={onAdd} 
+                        <ItemCount /* setShowButton={setShowButton} */ data={data} /* onAdd={onAdd} */ 
                         />
                         :                        
                         <Button variant={'outlined'}><Link to={'/Cart'}>Checkout</Link></Button>}

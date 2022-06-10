@@ -4,20 +4,23 @@ import Home from './Pages/Home';
 import Products from './Pages/Products';
 import DetailProducts from './Pages/DetailProducts';
 import NotFound from './Pages/NotFound';
+import { CartProvider } from './Context/CartContext';
 
 function App() {
   return (
     
     <div>
-      <BrowserRouter>
-        <ResponsiveNavBar/>
-        <Routes>
-          <Route path='/' element={<Home />}></Route>
-          <Route path='/Products/:category' element={<Products />}></Route>
-          <Route path='/Product/:id' element={<DetailProducts />}></Route>
-          <Route path='/*' element={<NotFound />}></Route>
-        </Routes>     
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <ResponsiveNavBar/>
+          <Routes>
+            <Route path='/' element={<Home />}></Route>
+            <Route path='/Products/:category' element={<Products />}></Route>
+            <Route path='/Product/:id' element={<DetailProducts />}></Route>
+            <Route path='/*' element={<NotFound />}></Route>
+          </Routes>     
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

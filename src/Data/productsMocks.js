@@ -6,6 +6,7 @@ const productsMock = [
         id: 1001,
         stock: 5,
         category: 'surfboards',
+        quantity:0,
     },
     {
         title: 'chris christenson water lion',
@@ -14,6 +15,7 @@ const productsMock = [
         id: 1002,
         stock: 8,
         category: 'surfboards',
+        quantity:0,
     },
     {
         title: 'lost rnf 1996 light speed',
@@ -22,6 +24,7 @@ const productsMock = [
         id: 1003,
         stock: 3,
         category: 'surfboards',
+        quantity:0,
     },
     {
         title: 'torq multiplier tec',
@@ -30,6 +33,7 @@ const productsMock = [
         id: 1004,
         stock: 12,
         category: 'surfboards',
+        quantity:0,
     },
     {
         title: 'nsp cocoflax cruise',
@@ -38,6 +42,7 @@ const productsMock = [
         id: 2001,
         stock: 4,
         category: 'sup',
+        quantity:0,
     },
     {
         title: 'surftech generator',
@@ -46,6 +51,7 @@ const productsMock = [
         id: 2002,
         stock: 7,
         category: 'sup',
+        quantity:0,
     },
     {
         title: 'surftech pura vida jetsetter',
@@ -62,6 +68,7 @@ const productsMock = [
         id: 2004,
         stock: 14,
         category: 'sup',
+        quantity:0,
     },
 
 ]

@@ -1,7 +1,13 @@
 import * as React from 'react';
+
+//Styles
 import './nav-bar.scss';
+
+//Componentsimport CartWidget from '../CartWidget/CartWidget';
 import './buttom-bar.scss'
 import ButtomBar from './ButtomBar';
+
+//Dependencies
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,7 +21,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import TsunamiIcon from '@mui/icons-material/Tsunami';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import CartWidget from '../CartWidget/CartWidget';
+
 
 const pages = ['Store', 'Help'];
 const settings = ['Profile','Logout'];
@@ -165,9 +172,8 @@ const ResponsiveNavBar = () => {
               ))}
             </Menu>
           </Box>
-          <Button disableRipple className='Cart' sx={{ display: 'flex', }}>
-            <ShoppingCartIcon/>
-          </Button>
+          <CartWidget
+          />
         </Toolbar>
       </Container>
     </AppBar>

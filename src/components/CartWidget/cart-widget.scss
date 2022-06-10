@@ -1,0 +1,21 @@
+.container-item-list-cart{
+    display: flex;
+    flex-direction: column;
+    .item-cart-prod{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .cart-prod__image{
+            width: 100%;
+            img{
+                width: 80px;
+            }
+        }
+        .cart-prod__info{
+        }
+        .cart-prod__action{
+        }
+    }
+}
+
+

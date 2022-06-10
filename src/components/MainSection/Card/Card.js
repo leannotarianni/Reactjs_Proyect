@@ -1,20 +1,29 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import CartContext from '../../../Context/CartContext';
+
+//Components
+import ItemCount from '../ItemCount/ItemCount';
+// Dependencies
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import ItemCount from '../ItemCount/ItemCount';
-/* import onAdd from '../../../fuctions/onAdd'; */
+import { Button } from '@mui/material';
+//Style
 import './card.scss';
-import { Link } from 'react-router-dom';
+
+/* import onAdd from '../../../fuctions/onAdd'; */
 
 
 
 
 const CardItem = ({data}) => {
     const {title,image,price,id} = data
+    const { addProductToCart } = useContext(CartContext);
 
-    const onAdd =(data)=>{
+    /* const onAdd =(data)=>{
         console.log(data)
-    }
+    } */
 
     return (
         <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >
@@ -26,8 +35,9 @@ const CardItem = ({data}) => {
                     <button><Link to={`/Product/${id}`} >Detail View</Link></button>
                     <p>{title}</p>
                     <span>${price} </span>
-                    <ItemCount data={data} onAdd={onAdd} />
-                </div>
+                    <ItemCount data={data} /* onAdd={onAdd} */ />
+{/*                     <Button onClick={()=>addProductToCart(data)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
+ */}                </div>
             </CardContent>
         </Card>
     )
