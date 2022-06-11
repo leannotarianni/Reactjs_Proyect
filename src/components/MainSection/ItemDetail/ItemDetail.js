@@ -1,6 +1,4 @@
-import { useState } from "react"
-import { Link } from "react-router-dom"
-import { Grid, Button } from "@mui/material"
+import { Grid} from "@mui/material"
 import './item-detail.scss'
 import ItemCount from "../ItemCount/ItemCount"
 /* import onAdd from "../../../fuctions/onAdd"*/
@@ -8,8 +6,6 @@ import ItemCount from "../ItemCount/ItemCount"
 const ItemDetail =({data})=> {
     const {title,image,price} = data
     
-    const [showButton, setShowButton] = useState(false)
-
     /* const onAdd =(data)=>{
         setShowButton(true)
         console.log(data)
@@ -28,12 +24,8 @@ const ItemDetail =({data})=> {
                     <div>
                         <p>{title}</p>
                         <p>${price} </p>
-                        {!showButton ?
-                        <ItemCount /* setShowButton={setShowButton} */ data={data} /* onAdd={onAdd} */ 
-                        />
-                        :                        
-                        <Button variant={'outlined'}><Link to={'/Cart'}>Checkout</Link></Button>}
-                        
+                        <ItemCount  data={data} /* onAdd={onAdd} */ 
+                        />  
                         <ul>
                             <h3>CARACTERÍSTICAS</h3>
                             <li>Quad high performance.</li>

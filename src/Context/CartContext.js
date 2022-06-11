@@ -13,9 +13,9 @@ const CartProvider = ({children}) => {
         }
     }
 
-    const removeProductFromCart = (product)=>{
+    /* const removeProductFromCart = (product)=>{
         
-    }
+    } */
 
     const data = {
         cartItemList,

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { useState, useContext } from 'react';
-import CartContext from '../../../Context/CartContext';
+import { useState} from 'react';
+/* import CartContext from '../../../Context/CartContext';*/
+
 //Dependencies
 import { Button } from '@mui/material';
 //Style
@@ -8,16 +9,15 @@ import './item-count.scss'
 
 
 
-const ItemCount = ({setShowButton,data/* ,onAdd */}) => {
+const ItemCount = ({data/* ,onAdd */}) => {
     
-    const { addProductToCart } = useContext(CartContext);
-    const [quantitySelected,setQuantitySelected] = useState (data.quantity)
-
-    //general
-    const onAdd =()=>{
-        /* console.log("cantidad elegida",quantity) */
+   /*  const { addProductToCart } = useContext(CartContext); */
+   
+   //general
+    /* const onAdd =()=>{
+        console.log("cantidad elegida",quantity)
         addProductToCart(data)
-    }
+    } */
 
     const [quantity,setQuantity] = useState (1)
 
@@ -38,9 +38,9 @@ const ItemCount = ({setShowButton,data/* ,onAdd */}) => {
             <p>{quantity}</p>
             <Button disableRipple onClick={addCount}>+</Button>
         </div>
-        <div>
+        {/* <div>
         <Button onClick={()=> onAdd(quantity)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
-        </div>
+        </div> */}
        </>
     )
 }

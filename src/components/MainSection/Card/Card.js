@@ -21,9 +21,9 @@ const CardItem = ({data}) => {
     const {title,image,price,id} = data
     const { addProductToCart } = useContext(CartContext);
 
-    /* const onAdd =(data)=>{
-        console.log(data)
-    } */
+    const onAdd =(quantity)=>{
+        console.log(quantity)
+    }
 
     return (
         <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >
@@ -35,9 +35,9 @@ const CardItem = ({data}) => {
                     <button><Link to={`/Product/${id}`} >Detail View</Link></button>
                     <p>{title}</p>
                     <span>${price} </span>
-                    <ItemCount data={data} /* onAdd={onAdd} */ />
-{/*                     <Button onClick={()=>addProductToCart(data)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
- */}                </div>
+                    <ItemCount data={data} onAdd={onAdd} />
+                    <Button onClick={()=>addProductToCart(data)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
+                </div>
             </CardContent>
         </Card>
     )

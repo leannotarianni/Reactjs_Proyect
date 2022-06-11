@@ -60,3 +60,16 @@
         color: white;
         margin-top: 5px;
     } */
+
+
+    //Button desaprecer
+    //item detail
+    /*
+    const [showButton, setShowButton] = useState(false)
+    {!showButton ?
+        <ItemCount /* setShowButton={setShowButton} data={data} onAdd={onAdd} 
+        />
+        :                        
+        <Button variant={'outlined'}><Link to={'/Cart'}>Checkout</Link></Button>} */
+        /* setShowButton={setShowButton} */
+    //itemcount
