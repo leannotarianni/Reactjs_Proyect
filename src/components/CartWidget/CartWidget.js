@@ -11,13 +11,9 @@ import './cart-widget.scss'
 /* import { Link } from 'react-router-dom';*/
 
 const CartWidget =()=>{
-    const {cartItemList, /* clearCart */} = useContext(CartContext)
+    const {cartItemList, clearCart} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-
-    /* const clearCart=()=>{
-        setproductsInCart({})
-    } */
 
 
     const handleClick = (event) => {
@@ -75,7 +71,7 @@ const CartWidget =()=>{
                     } 
                 </div>
                 <div key={1}>
-                    <button /* onClick={clearCart()} */>
+                    <button onClick={clearCart}>
                         clear
                     </button>
                 </div>
