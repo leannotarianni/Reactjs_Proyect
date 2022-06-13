@@ -9,15 +9,9 @@ import './item-count.scss'
 
 
 
-const ItemCount = ({data/* ,onAdd */}) => {
+const ItemCount = ({data,onAdd}) => {
     
-   /*  const { addProductToCart } = useContext(CartContext); */
-   
-   //general
-    /* const onAdd =()=>{
-        console.log("cantidad elegida",quantity)
-        addProductToCart(data)
-    } */
+
 
     const [quantity,setQuantity] = useState (1)
 
@@ -38,9 +32,9 @@ const ItemCount = ({data/* ,onAdd */}) => {
             <p>{quantity}</p>
             <Button disableRipple onClick={addCount}>+</Button>
         </div>
-        {/* <div>
-        <Button onClick={()=> onAdd(quantity)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
-        </div> */}
+        <div>
+        <Button onClick={()=> onAdd(data,quantity)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
+        </div>
        </>
     )
 }

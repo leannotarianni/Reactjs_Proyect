@@ -8,21 +8,17 @@ import ItemCount from '../ItemCount/ItemCount';
 // Dependencies
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { Button } from '@mui/material';
 //Style
 import './card.scss';
-
-/* import onAdd from '../../../fuctions/onAdd'; */
-
-
 
 
 const CardItem = ({data}) => {
     const {title,image,price,id} = data
     const { addProductToCart } = useContext(CartContext);
 
-    const onAdd =(quantity)=>{
+    const onAdd =(data,quantity)=>{
         console.log(quantity)
+        addProductToCart({data,quantity})
     }
 
     return (
@@ -36,7 +32,7 @@ const CardItem = ({data}) => {
                     <p>{title}</p>
                     <span>${price} </span>
                     <ItemCount data={data} onAdd={onAdd} />
-                    <Button onClick={()=>addProductToCart(data)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
+                    {/* <Button onClick={()=>addProductToCart(data)} variant={'outlined'} className='buy_buttom'>Add to cart</Button> */}
                 </div>
             </CardContent>
         </Card>

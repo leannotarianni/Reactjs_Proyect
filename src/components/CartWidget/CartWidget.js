@@ -11,10 +11,15 @@ import './cart-widget.scss'
 /* import { Link } from 'react-router-dom';*/
 
 const CartWidget =()=>{
-    const {cartItemList} = useContext(CartContext)
+    const {cartItemList, /* clearCart */} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-    
+
+    /* const clearCart=()=>{
+        setproductsInCart({})
+    } */
+
+
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
@@ -66,22 +71,13 @@ const CartWidget =()=>{
                             </div>
                         </div>
                         )
-                    })} 
-                        {/* <div className='item-cart-prod' key={1}>
-                            <div className='cart-prod__image'>
-                                <img src='/al merrick boddy quad.jpg' alt="prod carrito" />
-                            </div>
-                            <div className='cart-prod__info'>
-                                <p>tabla surf</p>
-                                <span>$ 120000</span>
-                            </div>
-                            <div className='cart-prod__action'>
-                                <button>
-                                    <DeleteIcon />
-                                </button>
-                            </div>
-                        </div> */}
-                    
+                    })
+                    } 
+                </div>
+                <div key={1}>
+                    <button /* onClick={clearCart()} */>
+                        clear
+                    </button>
                 </div>
             </Menu>
         </div>

@@ -1,15 +1,21 @@
-import { Grid} from "@mui/material"
-import './item-detail.scss'
+import { useContext } from 'react';
+import CartContext from '../../../Context/CartContext'
+//Components
 import ItemCount from "../ItemCount/ItemCount"
-/* import onAdd from "../../../fuctions/onAdd"*/
+//dependencies
+import { Grid} from "@mui/material"
+//Styles
+import './item-detail.scss'
 
 const ItemDetail =({data})=> {
     const {title,image,price} = data
+    const { addProductToCart } = useContext(CartContext);
+
     
-    /* const onAdd =(data)=>{
-        setShowButton(true)
-        console.log(data)
-    } */
+    const onAdd =(data,quantity)=>{
+        console.log(quantity)
+        addProductToCart({data,quantity})
+    }
 
     return(
             <Grid container>
@@ -24,7 +30,7 @@ const ItemDetail =({data})=> {
                     <div>
                         <p>{title}</p>
                         <p>${price} </p>
-                        <ItemCount  data={data} /* onAdd={onAdd} */ 
+                        <ItemCount  data={data} onAdd={onAdd} 
                         />  
                         <ul>
                             <h3>CARACTERÍSTICAS</h3>
