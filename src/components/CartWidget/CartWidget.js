@@ -11,10 +11,9 @@ import './cart-widget.scss'
 /* import { Link } from 'react-router-dom';*/
 
 const CartWidget =()=>{
-    const {productsInCart, clearCart} = useContext(CartContext)
+    const {productsInCart, clearCart,removeProductFromCart} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
-
 
     const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
@@ -47,7 +46,7 @@ const CartWidget =()=>{
                     {productsInCart.length === 0 && (
                         <>
                             <p>No hay productos agregados al carrito</p>
-                            <Link to="'/'" >Empezar a comprar</Link>
+                            <Link to='/' >Empezar a comprar</Link>
                         </>
                     )}
                     {productsInCart.map( (item) => {
@@ -62,8 +61,8 @@ const CartWidget =()=>{
                                 <p>selected: {item.quantity}</p>
                             </div>
                             <div className='cart-prod__action'>
-                                <button>
-                                    <DeleteIcon />
+                                <button onClick={() =>removeProductFromCart(item.id)}>
+                                    <DeleteIcon  />
                                 </button>
                             </div>
                         </div>
@@ -74,6 +73,9 @@ const CartWidget =()=>{
                 <div key={1}>
                     <button onClick={clearCart}>
                         clear
+                    </button>
+                    <button onClick={clearCart}>
+                        <Link to='/Cart'>View Cart</Link>
                     </button>
                 </div>
             </Menu>

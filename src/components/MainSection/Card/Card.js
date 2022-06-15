@@ -32,7 +32,6 @@ const CardItem = ({data}) => {
                     <p>{title}</p>
                     <span>${price} </span>
                     <ItemCount data={data} onAdd={onAdd} />
-                    {/* <Button onClick={()=>addProductToCart(data)} variant={'outlined'} className='buy_buttom'>Add to cart</Button> */}
                 </div>
             </CardContent>
         </Card>

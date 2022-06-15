@@ -15,6 +15,7 @@ const CartProvider = ({children}) => {
     const addProductToCart = ({data,quantity}) =>{
         
         const productInCart = {title: data.title,image: data.image,price: data.price,id: data.id,category: data.category,stock:data.stock,quantity}
+        localStorage.setItem('Productos en Carrito: ',JSON.stringify(productInCart))
         
         if(productIsInCart(productInCart)){
             setproductsInCart( productsInCart.map((prod) => {
@@ -25,7 +26,6 @@ const CartProvider = ({children}) => {
                     prod
                 )
             }))
-            
         }else{
             setproductsInCart(producstInCart => [...producstInCart, productInCart])
         }
@@ -33,21 +33,25 @@ const CartProvider = ({children}) => {
     
     useEffect(()=> {
         console.log("productos en carrito",productsInCart)
+        localStorage.setItem('Productos en Carrito: ',JSON.stringify(productsInCart))
     },[productsInCart])
     
-/*     const removeProductFromCart = (item)=>{
-         
-        setproductsInCart()
-    } */
+    const removeProductFromCart = (id)=>{
+        setproductsInCart(productsInCart.filter(productsInCart => productsInCart.id !== id))
+        localStorage.setItem('Productos en Carrito: ',JSON.stringify(productsInCart))
+    }
     
     const clearCart=()=>{
         setproductsInCart([])
+        localStorage.clear()
     }
-
+    
+    
     const data = {
         productsInCart,
         addProductToCart,
-        clearCart
+        removeProductFromCart,
+        clearCart,
     }
 
 
