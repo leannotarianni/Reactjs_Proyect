@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import CartContext from '../../../Context/CartContext'
+import { Link } from 'react-router-dom';
 //Components
 import ItemCount from "../ItemCount/ItemCount"
 //dependencies
@@ -32,6 +33,9 @@ const ItemDetail =({data})=> {
                         <p>${price} </p>
                         <ItemCount  data={data} onAdd={onAdd} 
                         />  
+                        <button>
+                            <Link to='/Cart'>Check Out</Link>
+                        </button>
                         <ul>
                             <h3>CARACTERÍSTICAS</h3>
                             <li>Quad high performance.</li>

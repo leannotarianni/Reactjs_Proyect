@@ -1,7 +1,7 @@
 const productsMock = [
     {
         title: 'al merrick boddy quad',
-        price: 10600,
+        price: 106000,
         image: 'al merrick boddy quad.jpg',
         id: 1001,
         stock: 5,

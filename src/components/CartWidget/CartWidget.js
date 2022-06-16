@@ -11,7 +11,7 @@ import './cart-widget.scss'
 /* import { Link } from 'react-router-dom';*/
 
 const CartWidget =()=>{
-    const {productsInCart, clearCart,removeProductFromCart} = useContext(CartContext)
+    const {productsInCart, clearCart,removeProductFromCart,totalQuantity} = useContext(CartContext)
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -24,7 +24,11 @@ const CartWidget =()=>{
     };
 
     return(
+        
         <div className='cart-container-icon'>
+            {totalQuantity !== 0 &&(
+            <p>{totalQuantity}</p>
+            )}
             <ShoppingCartIcon 
                 color={'primary'} 
                 aria-controls={open ? 'basic-menu' : undefined}
@@ -42,42 +46,42 @@ const CartWidget =()=>{
                 'aria-labelledby': 'basic-button',
                 }}
             >
-                <div className='container-item-list-cart'>
-                    {productsInCart.length === 0 && (
-                        <>
-                            <p>No hay productos agregados al carrito</p>
-                            <Link to='/' >Empezar a comprar</Link>
-                        </>
-                    )}
-                    {productsInCart.map( (item) => {
-                        return(
-                        <div className='item-cart-prod' key={item.id}>
-                            <div className='cart-prod__image'>
-                                <img src={`/${item.image}`} alt="prod carrito" />
-                            </div>
-                            <div className='cart-prod__info'>
-                                <p>{item.title}</p>
-                                <span>$ {item.price}</span>
-                                <p>selected: {item.quantity}</p>
-                            </div>
-                            <div className='cart-prod__action'>
-                                <button onClick={() =>removeProductFromCart(item.id)}>
-                                    <DeleteIcon  />
-                                </button>
-                            </div>
+            <div className='container-item-list-cart'>
+                {productsInCart.length === 0 && (
+                    <>
+                        <p>No hay productos agregados al carrito</p>
+                        <Link to='/' >Empezar a comprar</Link>
+                    </>
+                )}
+                {productsInCart.map( (item) => {
+                     return(
+                    <div className='item-cart-prod' key={item.id}>
+                        <div className='cart-prod__image'>
+                            <img src={`/${item.image}`} alt="prod carrito" />
                         </div>
-                        )
-                    })
-                    } 
-                </div>
-                <div key={1}>
-                    <button onClick={clearCart}>
-                        clear
-                    </button>
-                    <button onClick={clearCart}>
-                        <Link to='/Cart'>View Cart</Link>
-                    </button>
-                </div>
+                        <div className='cart-prod__info'>
+                            <p>{item.title}</p>
+                            <span>$ {item.price}</span>
+                            <p>selected: {item.quantity}</p>
+                        </div>
+                        <div className='cart-prod__action'>
+                            <button onClick={() =>removeProductFromCart(item)}>
+                                <DeleteIcon  />
+                            </button>
+                        </div>
+                    </div>
+                    )
+                })
+                } 
+            </div>
+            <div key={1}>
+                <button onClick={clearCart}>
+                    clear
+                </button>
+                <button>
+                    <Link to='/Cart'>View Cart</Link>
+                </button>
+            </div>
             </Menu>
         </div>
     )

@@ -30,7 +30,7 @@ const settings = ['Profile','Logout'];
 const ResponsiveNavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -56,7 +56,7 @@ const ResponsiveNavBar = () => {
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href='/'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -113,7 +113,7 @@ const ResponsiveNavBar = () => {
             variant="h5"
             noWrap
             component="a"
-            href=""
+            href='/'
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none',justifyContent: 'start' },
@@ -125,7 +125,7 @@ const ResponsiveNavBar = () => {
               textDecoration: 'none',
             }}
           >
-            k-SURF
+            WAVELOOS
           </Typography>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>

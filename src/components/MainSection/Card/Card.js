@@ -17,7 +17,6 @@ const CardItem = ({data}) => {
     const { addProductToCart } = useContext(CartContext);
 
     const onAdd =(data,quantity)=>{
-        console.log(quantity)
         addProductToCart({data,quantity})
     }
 

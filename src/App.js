@@ -6,6 +6,7 @@ import DetailProducts from './Pages/DetailProducts';
 import Cart from './Pages/Cart';
 import NotFound from './Pages/NotFound';
 import { CartProvider } from './Context/CartContext';
+import React from 'react';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
     <div>
       <CartProvider>
         <BrowserRouter>
-          <ResponsiveNavBar/>
+          <ResponsiveNavBar/> 
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/Products/:category' element={<Products />}></Route>
