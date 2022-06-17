@@ -1,7 +1,11 @@
 import * as React from 'react';
 import {useState, useEffect} from 'react';
+
+//Components
 import CardItemList from '../CardItemList/CardItemList';
-import getItems from '../../../fuctions/getItems';
+
+//Fuctions
+import getProducts from '../../../fuctions/getProducts';
 import Loading from '../../../fuctions/loading';
 
 const CardListContainer =() => {
@@ -12,7 +16,7 @@ const CardListContainer =() => {
     // se muestre una sola vez
     useEffect(()=>{
         //llamado promesa
-        getItems()
+        getProducts()
         .then( (response) => {
             setLoading(false)
             setProducts(response)

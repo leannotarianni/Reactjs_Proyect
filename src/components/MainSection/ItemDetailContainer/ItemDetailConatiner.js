@@ -1,8 +1,13 @@
 import {useEffect, useState} from "react"
 import { useParams } from "react-router-dom"
+/* import {doc, getdoc} from 'firebase/firestore'
+import db from "../../../data/firebaseconfig"*/
+// Components
 import ItemDetail from "../ItemDetail/ItemDetail"
-import getItems from "../../../fuctions/getItems"
+//Functions
+import getProduct from "../../../fuctions/getProduct"
 import Loading from "../../../fuctions/loading"
+
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
@@ -11,12 +16,13 @@ const ItemDetailContainer = () => {
 
 
     useEffect(()=>{
-         getItems()
+        getProduct(id)
         .then( (response) => {
+            setProduct(response)
             setLoading(false)
-            setProduct(response.find ((product)=>{
+            /*setProduct(response.find ((product)=>{
                 return product.id === parseInt(id)
-            }))
+            })) */
         })
         .catch((err) => {
             console.log("fallo la llamada.", err)
@@ -25,6 +31,7 @@ const ItemDetailContainer = () => {
         }) 
         
     },[id])
+
 
     
     return (

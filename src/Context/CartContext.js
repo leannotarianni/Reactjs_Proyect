@@ -1,4 +1,5 @@
 import { createContext, useState , useEffect } from "react";
+import getProducts from "../fuctions/getProducts";
 
 const CartContext = createContext()
 
@@ -15,7 +16,7 @@ const CartProvider = ({children}) => {
     
 
     const addProductToCart = ({data,quantity}) =>{
-        
+        getProducts()
         const productInCart = {title: data.title,image: data.image,price: data.price,id: data.id,category: data.category,stock:data.stock,quantity}
         
         if(productIsInCart(productInCart)){
@@ -37,22 +38,18 @@ const CartProvider = ({children}) => {
     useEffect(()=> {
         console.log("productos en carrito",productsInCart)
         console.log("total carrito",totalPrice)
-        /* localStorage.setItem('Productos en Carrito: ',JSON.stringify(productsInCart))
-        localStorage.setItem('Total Carrito',JSON.stringify(totalPrice)) */
     },[productsInCart,totalPrice])
     
     const removeProductFromCart = (item)=>{
         setproductsInCart(productsInCart.filter(productsInCart => productsInCart.id !== item.id))
         setTotalPrice(totalPrice - item.price * item.quantity)
         setTotalQuantity(totalQuantity - item.quantity)
-        /* localStorage.setItem('Productos en Carrito: ',JSON.stringify(productsInCart))
-        localStorage.setItem('Total Carrito',JSON.stringify(totalPrice)) */
     }
     
     const clearCart=()=>{
         setproductsInCart([])
         setTotalPrice([])
-        /* localStorage.clear() */
+        setTotalQuantity([])
     }
     
     

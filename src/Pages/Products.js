@@ -1,8 +1,10 @@
 import { Container} from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useEffect,useState } from 'react';
-import getItems from '../fuctions/getItems';
+//Components
 import CardItemList from '../components/MainSection/CardItemList/CardItemList';
+//Fuctions
+import getProducts from '../fuctions/getProducts';
 import Loading from '../fuctions/loading';
 
 const Products =()=> {
@@ -12,7 +14,7 @@ const Products =()=> {
 
     useEffect(()=>{
 
-        getItems()
+        getProducts()
         .then( (response) => {
             setLoading(false)
             setProducts( category ? response.filter( product => product.category === category) : response )

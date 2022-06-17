@@ -7,8 +7,6 @@ import Menu from '@mui/material/Menu';
 import DeleteIcon from '@mui/icons-material/Delete';
 //Style
 import './cart-widget.scss'
-/* import MenuItem from '@mui/material/MenuItem';*/
-/* import { Link } from 'react-router-dom';*/
 
 const CartWidget =()=>{
     const {productsInCart, clearCart,removeProductFromCart,totalQuantity} = useContext(CartContext)
