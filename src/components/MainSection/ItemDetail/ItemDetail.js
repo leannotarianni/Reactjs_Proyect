@@ -56,15 +56,3 @@ const ItemDetail =({data})=> {
 
 export default ItemDetail
 
-/* <Card sx={{maxWidth:300,margin:'auto',padding:'auto' }} >
-            <CardContent className="item-detail">
-                <div>
-                    <div>
-                      <img src={`./${image}`} className='sufrboards_img' alt='al merrick boddy quad'/>
-                    </div>
-                    <p>{title}</p>
-                    <span>${price} </span>
-                    <ItemCount stock={stock} onAdd={onAdd} />
-                </div>
-            </CardContent>
-        </Card> */

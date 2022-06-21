@@ -13,7 +13,6 @@ const CartProvider = ({children}) => {
             productsInCart.find(product => product.id === data.id)
         )
     }
-    
 
     const addProductToCart = ({data,quantity}) =>{
         getProducts()
@@ -36,8 +35,7 @@ const CartProvider = ({children}) => {
     }
     
     useEffect(()=> {
-        console.log("productos en carrito",productsInCart)
-        console.log("total carrito",totalPrice)
+
     },[productsInCart,totalPrice])
     
     const removeProductFromCart = (item)=>{
