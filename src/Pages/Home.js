@@ -14,7 +14,7 @@ const Home =()=> {
         getProducts()
         .then( (response) => {
             setLoading(false)
-            setProducts( response ? response.filter( product => product.price > 150000) : response )
+            setProducts(response)
         })
         .catch((err) => {
             console.log("fallo la llamada.", err)
@@ -26,9 +26,6 @@ const Home =()=> {
 
     return(
         <>
-        {/* <Container maxWidth="xxl">
-        <CardListContainer title={"Prime selection"}/>
-        </Container> */}
         {
             (loading)
         
@@ -39,10 +36,13 @@ const Home =()=> {
             :
             <div>
                 <Container maxWidth="xxl">
-                    <CardItemList products={products} title={"Prime selection"}/>
+                    <CardItemList products={products ? products.filter( product => product.price > 250000) : products} title={"Prime selection"}/>
                 </Container>
                 <Container maxWidth="xxl">
-                    <CardItemList products={products} title={"sale"}/>
+                    <CardItemList products={products ? products.filter( product => product.price < 70000 && product.category === 'bodyboards') : products} title={"Get started"}/>
+                </Container>
+                <Container maxWidth="xxl">
+                    <CardItemList products={products ? products.filter( product => product.category === 'accesories' && product.price < 15000 ) : products} title={"Modify your table"}/>
                 </Container> 
             </div>
         }

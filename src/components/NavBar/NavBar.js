@@ -1,9 +1,8 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 //Styles
 import './nav-bar.scss';
-
-//Componentsimport CartWidget from '../CartWidget/CartWidget';
 import './buttom-bar.scss'
 import ButtomBar from './ButtomBar';
 
@@ -24,7 +23,6 @@ import TsunamiIcon from '@mui/icons-material/Tsunami';
 import CartWidget from '../CartWidget/CartWidget';
 
 
-const pages = ['Store', 'Help'];
 const settings = ['Profile','Logout'];
 
 const ResponsiveNavBar = () => {
@@ -47,7 +45,7 @@ const ResponsiveNavBar = () => {
   };
 
   return (
-
+    <>
     <AppBar position="static">
       <Container maxWidth="l" className='NavBar'>
         <Toolbar disableGutters>
@@ -101,11 +99,8 @@ const ResponsiveNavBar = () => {
               }}
             >
               <ButtomBar></ButtomBar>
-              {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center" className='buttom_bar' >{page}</Typography>
-                </MenuItem>
-              ))}
+              <Button><Link to={'/Store'} >Store</Link></Button>
+              <Button><Link to={'/Help'} >Help</Link></Button>
             </Menu>
           </Box>
           <TsunamiIcon sx={{ display: { xs: 'flex', md: 'none', }, mr: 1 ,fontSize:'large'}} />
@@ -130,17 +125,8 @@ const ResponsiveNavBar = () => {
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>
             <ButtomBar></ButtomBar>
-            {pages.map((page) => (
-              <Button
-                disableRipple
-                className='buttom_bar'
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
+            <Button><Link to={'/Store'} >Store</Link></Button>
+            <Button><Link to={'/Help'} >Help</Link></Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
@@ -172,11 +158,11 @@ const ResponsiveNavBar = () => {
               ))}
             </Menu>
           </Box>
-          <CartWidget
-          />
+          <CartWidget/>
         </Toolbar>
       </Container>
     </AppBar>
+    </>
   );
 };
 export default ResponsiveNavBar;

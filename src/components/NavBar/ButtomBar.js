@@ -40,8 +40,8 @@ export default function ButtomBar() {
       >
         <MenuItem onClick={handleClose}><Link to={`/Products/surfboards`}>SURFBOARDS</Link></MenuItem>
         <MenuItem onClick={handleClose}><Link to={`/Products/sup`}>SUP</Link></MenuItem>
-        <MenuItem onClick={handleClose}>BODYBOARDS</MenuItem>
-        <MenuItem onClick={handleClose}>ACCESORIES</MenuItem>
+        <MenuItem onClick={handleClose}><Link to={`/Products/bodyboards`}>BODYBOARDS</Link></MenuItem>
+        <MenuItem onClick={handleClose}><Link to={`/Products/accesories`}>ACCESORIES</Link></MenuItem>
       </Menu>
     </div>
   );

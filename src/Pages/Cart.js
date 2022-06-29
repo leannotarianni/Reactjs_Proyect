@@ -49,13 +49,13 @@ const Cart =()=> {
 
     const finishOrder = () => {
         navigate('/')
-        clearCart()
     }
 
     const saveData = async (newOrder) => {
         const orderFirebase = collection (db,'orders')
         const orderDoc = await addDoc(orderFirebase, newOrder)
         setSuccesOrder(orderDoc.id)
+        clearCart()
     }
 
     return(

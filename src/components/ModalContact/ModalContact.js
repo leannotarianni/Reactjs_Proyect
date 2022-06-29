@@ -1,4 +1,4 @@
-import { Dialog, DialogContent, DialogTitle } from "@mui/material"
+import { Dialog, DialogContent} from "@mui/material"
 
 const ModalContact = ({handleClose,open,children}) => {
     return(
