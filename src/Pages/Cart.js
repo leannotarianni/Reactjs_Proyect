@@ -7,6 +7,7 @@ import db from '../data/firebaseconfig';
 //Components
 import CartContext from '../Context/CartContext';
 import ModalContact from '../components/ModalContact/ModalContact';
+import CartCount from '../components/CartWidget/CartCount';
 //Dependencies
 import { Container, Button , TextField, DialogTitle } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -58,6 +59,7 @@ const Cart =()=> {
         clearCart()
     }
 
+
     return(
         <Container className='general-container'>
         <div className='container-item-list-cart'>
@@ -71,8 +73,9 @@ const Cart =()=> {
             <div className='item-cart-head'>
                 <h2>Product</h2>
                 <h2>Description</h2>
-                <h2>Price</h2>
+                <h2>Price/unit</h2>
                 <h2>Quantity</h2>
+                <h2>edit</h2>
                 <h2>Delet</h2>
             </div>
             )}
@@ -89,8 +92,9 @@ const Cart =()=> {
                         <span>$ {item.price}</span>
                     </div>
                     <div className='item-cart-quantity'>
-                        <p>selected: {item.quantity}</p>
+                        <p>{item.quantity}</p>
                     </div>
+                    <CartCount item={item}/>
                     <div className='item-cart-delete'>
                         <button onClick={() =>removeProductFromCart(item)}>
                             <DeleteIcon  />

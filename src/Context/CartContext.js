@@ -43,6 +43,66 @@ const CartProvider = ({children}) => {
         setTotalPrice(totalPrice - item.price * item.quantity)
         setTotalQuantity(totalQuantity - item.quantity)
     }
+
+    const decreaseItemFromCart = (item) => {
+        setproductsInCart( productsInCart.map((prod) => {
+            if(prod.id === item.id){
+                prod.quantity -= 1
+            }
+            return(prod)
+            
+        }))
+
+        /* setTotalPrice( productsInCart.map((prod) => {
+            if(prod.id === item.id){
+                prod.price -= item.price * item.quantity
+            }
+            return(
+                prod.price
+            )
+            
+        }))
+        
+        setTotalQuantity( productsInCart.map((prod) => {
+            if(prod.id === item.id){
+                prod.quantity -= item.quantity
+            }
+            return(
+                prod.quantity
+            )
+            
+        }))  */
+    }
+
+    const increaseItemFromCart = (item) => {
+        setproductsInCart( productsInCart.map((prod) => {
+            if(prod.id === item.id){
+                prod.quantity += 1
+            }
+            return(prod)
+            
+        }))
+
+        /* setTotalPrice( productsInCart.map((prod) => {
+            if(prod.id === item.id){
+                prod.price += item.price * item.quantity
+            }
+            return(
+                prod.price
+            )
+            
+        }))
+        
+        setTotalQuantity( productsInCart.map((prod) => {
+            if(prod.id === item.id){
+                prod.quantity += item.quantity
+            }
+            return(
+                prod.quantity
+            )
+            
+        })) */
+    }
     
     const clearCart=()=>{
         setproductsInCart([])
@@ -55,6 +115,8 @@ const CartProvider = ({children}) => {
         productsInCart,
         addProductToCart,
         removeProductFromCart,
+        decreaseItemFromCart,
+        increaseItemFromCart,
         clearCart,
         totalPrice,
         totalQuantity,

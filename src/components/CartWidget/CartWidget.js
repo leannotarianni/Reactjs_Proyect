@@ -5,8 +5,11 @@ import CartContext from '../../Context/CartContext';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
 import DeleteIcon from '@mui/icons-material/Delete';
+//Components
+import CartCount from './CartCount';
 //Style
 import './cart-widget.scss'
+
 
 const CartWidget =()=>{
     const {productsInCart, clearCart,removeProductFromCart,totalQuantity} = useContext(CartContext)
@@ -21,6 +24,7 @@ const CartWidget =()=>{
         setAnchorEl(null);
     };
 
+    
     return(
         
         <div className='cart-container-icon'>
@@ -59,10 +63,11 @@ const CartWidget =()=>{
                         </div>
                         <div className='cart-prod__info'>
                             <p>{item.title}</p>
-                            <span>$ {item.price}</span>
+                            <span>$ {item.price * item.quantity}</span>
                             <p>selected: {item.quantity}</p>
                         </div>
-                        <div className='cart-prod__action'>
+                        <CartCount item={item}/>
+                        <div className='cart-prod__delet'>
                             <button onClick={() =>removeProductFromCart(item)}>
                                 <DeleteIcon  />
                             </button>
