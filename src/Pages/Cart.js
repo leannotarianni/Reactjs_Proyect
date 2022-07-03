@@ -1,4 +1,4 @@
-import { useContext , useState } from 'react';
+import { useContext , useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 //Firebase
@@ -11,6 +11,7 @@ import CartCount from '../components/CartWidget/CartCount';
 //Dependencies
 import { Container, Button , TextField, DialogTitle } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
+import validator from 'validator';
 //Styles
 import './cart.scss'
 
@@ -18,6 +19,10 @@ const Cart =()=> {
     const {productsInCart,clearCart,removeProductFromCart,totalPrice} = useContext(CartContext)
     const navigate = useNavigate()
     const [showModal, setShowModal] = useState(false)
+    const [validateEmail, setValidateEmail] = useState(true)
+    const [validateName, setValidateName] = useState(true)
+    const [validatePhone, setValidatePhone] = useState(true)
+
     const [formValue, setFormValue] = useState({
         name: '',
         phone:'',
@@ -34,14 +39,76 @@ const Cart =()=> {
             }
         }),
         date:new Date() ,
-        total:totalPrice
+        total:'00',
     })
     const[succes, setSuccesOrder] = useState()
 
+    //js style
+    /* const [errors,setErrors] = useState([
+        {errorEmail: '',
+         errorPhone:''
+        },
+    ]) */
+
+
+
     const handleSubmit = (e) =>{
         e.preventDefault()
-        setOrder({...order,buyer: formValue})
-        saveData({...order,buyer: formValue})
+        /* setOrder({...order,buyer: formValue}) */
+        /* saveData({...order,buyer: formValue})  */
+        
+        //react style
+        validation(validateEmail & validateName & validatePhone && setOrder({...order,buyer: formValue}) & console.log("orden sin errores",order))
+         
+        
+        //js style
+        /* validation(errors.map((error)=>{
+            if (error.errorEmail === 'EmailError'){
+                return(
+                    console.log(error.errorEmail)
+                )
+                
+            }if(error.errorPhone === 'PhoneError'){
+                return(
+                    console.log('error en el phone')
+                )
+                
+            }else {
+                return(console.log('sin errores'))
+            }
+            
+        })) */
+        
+        
+    }
+
+    //js style
+    /* const emailValidation = validator.isEmail(formValue.email)
+    const phoneValidation = validator.isNumeric(formValue.phone) */
+    
+
+
+    const validation = () => {
+        //react style
+        setValidateEmail(validator.isEmail(formValue.email))
+        console.log("validation email",validateEmail)
+        
+        setValidateName(validator.isAlpha(formValue.name))
+        console.log("validation name",validateName)
+
+        setValidatePhone(validator.isNumeric(formValue.phone))
+        console.log("validation phone",validatePhone)
+        
+        
+        //js style
+        /* if (emailValidation === false){
+            setErrors({errorEmail:'EmailError'})
+        } if(phoneValidation === false){
+            setErrors(errors => [errors,{errorPhone:'PhoneError'}])
+        } else {
+            setErrors(errors=> [{errorEmail:''},{errorPhone:''}])
+        }
+        console.log(errors) */
     }
 
     const handleChange = (e)=> {
@@ -52,14 +119,14 @@ const Cart =()=> {
         navigate('/')
     }
 
-    const saveData = async (newOrder) => {
+    /* const saveData = async (newOrder) => {
         const orderFirebase = collection (db,'orders')
         const orderDoc = await addDoc(orderFirebase, newOrder)
         setSuccesOrder(orderDoc.id)
         clearCart()
-    }
+    } */
 
-
+    
     return(
         <Container className='general-container'>
         <div className='container-item-list-cart'>
@@ -111,7 +178,7 @@ const Cart =()=> {
                 </button>
                 <div>
                     <p>total: </p>
-                    <p>${totalPrice}</p>
+                    <p>${totalPrice()}</p>
                 </div>
                 <Button variant={'outlined'} onClick={()=> setShowModal(true)}>
                     Complete Check Out
@@ -141,12 +208,15 @@ const Cart =()=> {
                     color="warning"
                     margin="dense"
                     label="Email Address"
-                    type="email"
+                    /* type="email" */
+                    required
                     fullWidth
                     variant="standard"
                     onChange={handleChange}
+                    /* onFocus={validation} */
                     value={formValue.email}
                 />
+                {!validateEmail && <p>Invalid Email</p>}
                 <TextField
                     id="outlined-basic"
                     name='name'
@@ -155,12 +225,15 @@ const Cart =()=> {
                     color="warning"
                     margin="dense"
                     label="Complete Name"
-                    type="name"
+                    /* type="name" */
+                    required
                     fullWidth
                     onChange={handleChange}
+                    /* onClick={validation} */
                     variant="standard"
                     value={formValue.name}
                 />
+                {!validateName && <p>Invalid</p>}
                 <TextField
                     id="outlined-basic"
                     name='phone'
@@ -169,12 +242,15 @@ const Cart =()=> {
                     color="warning"
                     margin="dense"
                     label="Phone"
-                    type="number"
+                    /* type="number" */
+                    required
                     fullWidth
                     variant="standard"
                     onChange={handleChange}
+                    /* onClick={validation} */
                     value={formValue.phone}
                 />
+                {!validatePhone && <p>Invalid number</p>}
                 <Button variant='outlined' type='submit'>Submit</Button>
             </form>
             </>)}

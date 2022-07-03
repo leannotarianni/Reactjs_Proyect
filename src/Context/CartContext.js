@@ -5,13 +5,19 @@ const CartContext = createContext()
 
 const CartProvider = ({children}) => {
     const [productsInCart, setproductsInCart] = useState([])
-    const [totalPrice, setTotalPrice] = useState(0)
-    const [totalQuantity, setTotalQuantity] = useState(0)
-
+    
     const productIsInCart = (data)=> {
         return(
             productsInCart.find(product => product.id === data.id)
         )
+    }
+
+    const totalPrice = ()=>{
+        return productsInCart.reduce((acc,product) => acc + product.price * product.quantity,0)
+    } 
+
+    const totalQuantity = () => {
+        return productsInCart.reduce((acc,product,) => acc + product.quantity,0)
     }
 
     const addProductToCart = ({data,quantity}) =>{
@@ -30,18 +36,14 @@ const CartProvider = ({children}) => {
         }else{
             setproductsInCart(producstInCart => [...producstInCart, productInCart])
         }
-        setTotalPrice(totalPrice + productInCart.price * productInCart.quantity)
-        setTotalQuantity(totalQuantity + productInCart.quantity)
     }
     
     useEffect(()=> {
 
-    },[productsInCart,totalPrice])
+    },[productsInCart])
     
     const removeProductFromCart = (item)=>{
         setproductsInCart(productsInCart.filter(productsInCart => productsInCart.id !== item.id))
-        setTotalPrice(totalPrice - item.price * item.quantity)
-        setTotalQuantity(totalQuantity - item.quantity)
     }
 
     const decreaseItemFromCart = (item) => {
@@ -52,26 +54,6 @@ const CartProvider = ({children}) => {
             return(prod)
             
         }))
-
-        /* setTotalPrice( productsInCart.map((prod) => {
-            if(prod.id === item.id){
-                prod.price -= item.price * item.quantity
-            }
-            return(
-                prod.price
-            )
-            
-        }))
-        
-        setTotalQuantity( productsInCart.map((prod) => {
-            if(prod.id === item.id){
-                prod.quantity -= item.quantity
-            }
-            return(
-                prod.quantity
-            )
-            
-        }))  */
     }
 
     const increaseItemFromCart = (item) => {
@@ -82,41 +64,19 @@ const CartProvider = ({children}) => {
             return(prod)
             
         }))
-
-        /* setTotalPrice( productsInCart.map((prod) => {
-            if(prod.id === item.id){
-                prod.price += item.price * item.quantity
-            }
-            return(
-                prod.price
-            )
-            
-        }))
-        
-        setTotalQuantity( productsInCart.map((prod) => {
-            if(prod.id === item.id){
-                prod.quantity += item.quantity
-            }
-            return(
-                prod.quantity
-            )
-            
-        })) */
     }
     
     const clearCart=()=>{
         setproductsInCart([])
-        setTotalPrice([])
-        setTotalQuantity([])
     }
     
     
     const data = {
         productsInCart,
         addProductToCart,
-        removeProductFromCart,
-        decreaseItemFromCart,
         increaseItemFromCart,
+        decreaseItemFromCart,
+        removeProductFromCart,
         clearCart,
         totalPrice,
         totalQuantity,

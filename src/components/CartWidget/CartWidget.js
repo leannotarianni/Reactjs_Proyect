@@ -28,8 +28,8 @@ const CartWidget =()=>{
     return(
         
         <div className='cart-container-icon'>
-            {totalQuantity !== 0 &&(
-            <p>{totalQuantity}</p>
+            {totalQuantity() !== 0 &&(
+            <p>{totalQuantity()}</p>
             )}
             <ShoppingCartIcon 
                 color={'primary'} 

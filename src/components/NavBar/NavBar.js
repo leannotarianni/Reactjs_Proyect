@@ -53,8 +53,6 @@ const ResponsiveNavBar = () => {
           <Typography
             variant="h6"
             noWrap
-            component="a"
-            href='/'
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
@@ -64,8 +62,7 @@ const ResponsiveNavBar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >
-            WAVELOOS
+          ><Link to={'/'}>WAVELOOS</Link> 
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -107,8 +104,6 @@ const ResponsiveNavBar = () => {
           <Typography
             variant="h5"
             noWrap
-            component="a"
-            href='/'
             sx={{
               mr: 2,
               display: { xs: 'flex', md: 'none',justifyContent: 'start' },
@@ -119,8 +114,7 @@ const ResponsiveNavBar = () => {
               color: 'inherit',
               textDecoration: 'none',
             }}
-          >
-            WAVELOOS
+          ><Link to={'/'} >WAVELOOS</Link>
           </Typography>
           
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>
