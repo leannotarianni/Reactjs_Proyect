@@ -43,53 +43,16 @@ const Cart =()=> {
     })
     const[succes, setSuccesOrder] = useState()
 
-    //js style
-    /* const [errors,setErrors] = useState([
-        {errorEmail: '',
-         errorPhone:''
-        },
-    ]) */
+
 
 
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        /* setOrder({...order,buyer: formValue}) */
-        /* saveData({...order,buyer: formValue})  */
-        
-        //react style
         validation(validateEmail & validateName & validatePhone && setOrder({...order,buyer: formValue}) & console.log("orden sin errores",order))
-         
-        
-        //js style
-        /* validation(errors.map((error)=>{
-            if (error.errorEmail === 'EmailError'){
-                return(
-                    console.log(error.errorEmail)
-                )
-                
-            }if(error.errorPhone === 'PhoneError'){
-                return(
-                    console.log('error en el phone')
-                )
-                
-            }else {
-                return(console.log('sin errores'))
-            }
-            
-        })) */
-        
-        
     }
 
-    //js style
-    /* const emailValidation = validator.isEmail(formValue.email)
-    const phoneValidation = validator.isNumeric(formValue.phone) */
-    
-
-
     const validation = () => {
-        //react style
         setValidateEmail(validator.isEmail(formValue.email))
         console.log("validation email",validateEmail)
         
@@ -98,17 +61,6 @@ const Cart =()=> {
 
         setValidatePhone(validator.isNumeric(formValue.phone))
         console.log("validation phone",validatePhone)
-        
-        
-        //js style
-        /* if (emailValidation === false){
-            setErrors({errorEmail:'EmailError'})
-        } if(phoneValidation === false){
-            setErrors(errors => [errors,{errorPhone:'PhoneError'}])
-        } else {
-            setErrors(errors=> [{errorEmail:''},{errorPhone:''}])
-        }
-        console.log(errors) */
     }
 
     const handleChange = (e)=> {
@@ -208,12 +160,10 @@ const Cart =()=> {
                     color="warning"
                     margin="dense"
                     label="Email Address"
-                    /* type="email" */
                     required
                     fullWidth
                     variant="standard"
                     onChange={handleChange}
-                    /* onFocus={validation} */
                     value={formValue.email}
                 />
                 {!validateEmail && <p>Invalid Email</p>}
@@ -225,11 +175,9 @@ const Cart =()=> {
                     color="warning"
                     margin="dense"
                     label="Complete Name"
-                    /* type="name" */
                     required
                     fullWidth
                     onChange={handleChange}
-                    /* onClick={validation} */
                     variant="standard"
                     value={formValue.name}
                 />
@@ -242,12 +190,10 @@ const Cart =()=> {
                     color="warning"
                     margin="dense"
                     label="Phone"
-                    /* type="number" */
                     required
                     fullWidth
                     variant="standard"
                     onChange={handleChange}
-                    /* onClick={validation} */
                     value={formValue.phone}
                 />
                 {!validatePhone && <p>Invalid number</p>}
