@@ -36,6 +36,7 @@ const CardListContainer =({category,title}) => {
                 }else if(title === "Modify your table"){
                     setProducts(products ? products.filter( product => product.category === 'accesories' && product.price < 15000 ) : products)
                 };
+                break;
             }
         })
         .catch((err) => {
