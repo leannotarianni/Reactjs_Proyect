@@ -1,15 +1,16 @@
 import { Container} from '@mui/material';
-import { useState,useEffect } from 'react';
+/* import { useState,useEffect } from 'react'; */
 //Components
-import Loading from '../fuctions/loading';
+/* import Loading from '../fuctions/loading';
 import CardItemList from '../components/MainSection/CardItemList/CardItemList';
-import getProducts from '../fuctions/getProducts';
+import getProducts from '../fuctions/getProducts'; */
+import CardListContainer from '../components/MainSection/CardListContainer/CardListContainer';
 
 const Home =()=> {
-    const [loading, setLoading]= useState(true)
-    const [products, setProducts] = useState([]) 
+    /* const [loading, setLoading]= useState(true)
+    const [products, setProducts] = useState([])  */
 
-    useEffect(()=>{
+    /* useEffect(()=>{
         
         getProducts()
         .then( (response) => {
@@ -22,19 +23,32 @@ const Home =()=> {
         .finally( ()=> {
         })
 
-    },[])
+    },[]) */
 
     return(
         <>
         {
-            (loading)
+            /* (loading)
         
             ?
 
             ( <Loading/> ) 
         
-            :
+            : */
             <div>
+                <Container maxWidth="xxl">
+                    <CardListContainer  title={"Prime selection"}/>
+                </Container>
+                <Container maxWidth="xxl">
+                    <CardListContainer  title={"Get started"}/>
+                </Container>
+                <Container maxWidth="xxl">
+                    <CardListContainer  title={"Modify your table"}/>
+                </Container> 
+            </div>
+            
+        }
+        {/* <div>
                 <Container maxWidth="xxl">
                     <CardItemList products={products ? products.filter( product => product.price > 250000) : products} title={"Prime selection"}/>
                 </Container>
@@ -44,8 +58,7 @@ const Home =()=> {
                 <Container maxWidth="xxl">
                     <CardItemList products={products ? products.filter( product => product.category === 'accesories' && product.price < 15000 ) : products} title={"Modify your table"}/>
                 </Container> 
-            </div>
-        }
+            </div> */}
         </>
     )
 }
