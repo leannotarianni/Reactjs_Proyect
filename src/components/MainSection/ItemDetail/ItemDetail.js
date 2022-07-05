@@ -14,7 +14,6 @@ const ItemDetail =({data})=> {
 
     
     const onAdd =(data,quantity)=>{
-        console.log(quantity)
         addProductToCart({data,quantity})
     }
 
@@ -34,15 +33,8 @@ const ItemDetail =({data})=> {
                         <ItemCount  data={data} onAdd={onAdd} 
                         />  
                         <button>
-                            <Link to='/Cart'>Check Out</Link>
+                            <Link to='/Cart'>View Cart</Link>
                         </button>
-                        <ul>
-                            <h3>CARACTERÍSTICAS</h3>
-                            <li>Quad high performance.</li>
-                            <li>Tabla pensada para surfearse en medidas inferiores a las habituales.</li>
-                            <li>Velocidad y manejabilidad.</li>
-                            <li>Perfecta para olas desde la rodilla hasta más arriba de la cabeza.</li>
-                        </ul> 
                     </div>
                     
                 </Grid>

@@ -5,6 +5,7 @@ import CartContext from '../../Context/CartContext';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
 import DeleteIcon from '@mui/icons-material/Delete';
+import { Button } from '@mui/material';
 //Components
 import CartCount from './CartCount';
 //Style
@@ -32,14 +33,13 @@ const CartWidget =()=>{
             <p>{totalQuantity()}</p>
             )}
             <ShoppingCartIcon 
-                color={'primary'} 
                 aria-controls={open ? 'basic-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
             />
             <Menu
-                marginThreshold={50}
+                marginThreshold={60}
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -50,9 +50,13 @@ const CartWidget =()=>{
             >
             <div className='container-item-list-cart'>
                 {productsInCart.length === 0 && (
-                    <>
-                        <p>No hay productos agregados al carrito</p>
-                        <Link to='/' >Empezar a comprar</Link>
+                    <> 
+                        <div className='conteiner-noproducts'>
+                            <p>There are no products added to the cart</p>
+                            <Button className='button-start-buying-widget' variant='outlined'>
+                                <Link to='/' >Start buying</Link>
+                            </Button>
+                        </div>  
                     </>
                 )}
                 {productsInCart.map( (item) => {
@@ -77,7 +81,7 @@ const CartWidget =()=>{
                 })
                 } 
             </div>
-            <div key={1}>
+            <div key={1} className='cart-buttons'>
                 <button onClick={clearCart}>
                     clear
                 </button>

@@ -10,6 +10,8 @@ import Cart from './Pages/Cart';
 import Stores from './Pages/Stores';
 import Help from './Pages/Help';
 import NotFound from './Pages/NotFound';
+//Style
+import './app.scss'
 
 function App() {
   return (

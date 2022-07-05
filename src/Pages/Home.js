@@ -1,10 +1,12 @@
 import { Container} from '@mui/material';
 /* import { useState,useEffect } from 'react'; */
 //Components
+import CardListContainer from '../components/MainSection/CardListContainer/CardListContainer';
 /* import Loading from '../fuctions/loading';
 import CardItemList from '../components/MainSection/CardItemList/CardItemList';
 import getProducts from '../fuctions/getProducts'; */
-import CardListContainer from '../components/MainSection/CardListContainer/CardListContainer';
+//Style
+import './home.scss'
 
 const Home =()=> {
     /* const [loading, setLoading]= useState(true)
@@ -28,21 +30,14 @@ const Home =()=> {
     return(
         <>
         {
-            /* (loading)
-        
-            ?
-
-            ( <Loading/> ) 
-        
-            : */
-            <div>
-                <Container maxWidth="xxl">
+            <div className='home-conteiner'>
+                <Container maxWidth="xxl" className='Prime-selection'>
                     <CardListContainer  title={"Prime selection"}/>
                 </Container>
-                <Container maxWidth="xxl">
+                <Container maxWidth="xxl" className='Get-started'>
                     <CardListContainer  title={"Get started"}/>
                 </Container>
-                <Container maxWidth="xxl">
+                <Container maxWidth="xxl" className='Modify-your-table'>
                     <CardListContainer  title={"Modify your table"}/>
                 </Container> 
             </div>

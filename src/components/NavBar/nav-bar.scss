@@ -4,9 +4,22 @@
 }
 
 .ResponsiveMenu {
+    
+    button{
+        color: black;
+    }
+    a{
+        color: black;
+    }
     ul{
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
+    }
+}
 
+.navbar-buttom-list{
+    button{
+        color: white;
     }
 }

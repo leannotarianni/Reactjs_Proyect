@@ -1,7 +1,11 @@
 .card_item{
+  a{
+    color: black;
+  }
    .surfboards_galerry{
       display: flex;
       flex-direction: column;
+      text-align: center;
      .sufrboards_img {
          width: 100%;
      } 

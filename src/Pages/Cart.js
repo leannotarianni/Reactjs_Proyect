@@ -39,44 +39,48 @@ const Cart =()=> {
             }
         }),
         date:new Date() ,
-        total:'00',
+        total:`${totalPrice()}`,
     })
+
+
     const[succes, setSuccesOrder] = useState()
-
-
-
-
 
     const handleSubmit = (e) =>{
         e.preventDefault()
-        validation(validateEmail & validateName & validatePhone && setOrder({...order,buyer: formValue}) & console.log("orden sin errores",order))
+        
+        validation( validateEmail  && setOrder({...order,buyer: formValue}) & console.log("orden sin errores",order))
     }
 
+    /* useEffect(() => {
+        console.log("orden sin errores actualizada",order)
+    }, [order]); */
+    
     const validation = () => {
         setValidateEmail(validator.isEmail(formValue.email))
-        console.log("validation email",validateEmail)
+        /* console.log("validation email",validateEmail) */
         
         setValidateName(validator.isAlpha(formValue.name))
-        console.log("validation name",validateName)
+        /* console.log("validation name",validateName) */
 
         setValidatePhone(validator.isNumeric(formValue.phone))
-        console.log("validation phone",validatePhone)
+        /* console.log("validation phone",validatePhone) */
     }
 
     const handleChange = (e)=> {
-        setFormValue({...formValue, [e.target.name]: e.target.value})
+        setFormValue({...formValue, [e.target.name]: e.target.value}
+    ) 
     }
 
     const finishOrder = () => {
         navigate('/')
     }
 
-    /* const saveData = async (newOrder) => {
+    const saveData = async (newOrder) => {
         const orderFirebase = collection (db,'orders')
         const orderDoc = await addDoc(orderFirebase, newOrder)
         setSuccesOrder(orderDoc.id)
         clearCart()
-    } */
+    }
 
     
     return(
@@ -84,8 +88,10 @@ const Cart =()=> {
         <div className='container-item-list-cart'>
             {productsInCart.length === 0 && (
                 <>
-                    <p>No hay productos agregados al carrito</p>
-                    <Link to='/' >Empezar a comprar</Link>
+                    <p>There are no products added to the carto</p>
+                    <Button className='button-start-buying' variant='outlined'>
+                        <Link to='/' >start buying</Link>   
+                    </Button>
                 </>
             )}
             {productsInCart.length !== 0 && (
@@ -166,7 +172,7 @@ const Cart =()=> {
                     onChange={handleChange}
                     value={formValue.email}
                 />
-                {!validateEmail && <p>Invalid Email</p>}
+                {!validateEmail && <p className='invalid'>Invalid Email</p>}
                 <TextField
                     id="outlined-basic"
                     name='name'
@@ -181,7 +187,7 @@ const Cart =()=> {
                     variant="standard"
                     value={formValue.name}
                 />
-                {!validateName && <p>Invalid</p>}
+                {!validateName && <p className='invalid'>Invalid</p>}
                 <TextField
                     id="outlined-basic"
                     name='phone'
@@ -196,7 +202,7 @@ const Cart =()=> {
                     onChange={handleChange}
                     value={formValue.phone}
                 />
-                {!validatePhone && <p>Invalid number</p>}
+                {!validatePhone && <p className='invalid'>Invalid number</p>}
                 <Button variant='outlined' type='submit'>Submit</Button>
             </form>
             </>)}

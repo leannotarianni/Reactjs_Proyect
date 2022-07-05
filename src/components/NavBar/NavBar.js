@@ -40,13 +40,13 @@ const ResponsiveNavBar = () => {
         <Toolbar disableGutters>
           <TsunamiIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
-            variant="h6"
+            variant="h4"
             noWrap
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
               fontFamily: 'monospace',
-              fontWeight: 700,
+              fontWeight: 10000,
               letterSpacing: '.1rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -98,7 +98,7 @@ const ResponsiveNavBar = () => {
               display: { xs: 'flex', md: 'none',justifyContent: 'start' },
               flexGrow: 1,
               fontFamily: 'monospace',
-              fontWeight: 700,
+              fontWeight: 10000,
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
@@ -106,7 +106,7 @@ const ResponsiveNavBar = () => {
           ><Link to={'/'} >WAVELOOS</Link>
           </Typography>
           
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>
+          <Box className='navbar-buttom-list' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>
             <ButtomBar></ButtomBar>
             <Button disableRipple><Link to={'/Store'} >Store</Link></Button>
             <Button disableRipple><Link to={'/Help'} >Help</Link></Button>

@@ -1,0 +1,31 @@
+.stores-conteiner{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    align-items: center;
+    .stores-intro{
+        text-align: center;
+        width: 95%;
+        p{
+            text-align: start;
+        }
+    }
+    .map-conteiner{
+        width: 95%;
+        height: 100%;
+        margin: 20px 0px;
+
+        iframe{
+            border: 0px;
+            margin-top: 10px;
+            width: 80%;
+            height: 300px;
+            @media only screen and (min-width: 600px) {
+                height: 400px;
+            }
+            @media only screen and (min-width: 900px) {
+                height: 500px;
+            } 
+        }
+    }
+}

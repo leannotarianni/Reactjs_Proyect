@@ -1,16 +1,11 @@
 import * as React from 'react';
 import {Grid} from '@mui/material';
 import CardItem from '../Card/Card';
-import './card-item-list.scss';
 
 
-
-const CardItemList =({title,products})=> {
+const CardItemList =({products})=> {
     return(
         <>
-        <div>
-            <h2>{title}</h2>
-        </div>
         <Grid container spacing={2} className='galerry_container'>
             {
                 products.map( (product)=>{
