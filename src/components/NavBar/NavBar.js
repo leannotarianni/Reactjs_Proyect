@@ -39,7 +39,7 @@ const ResponsiveNavBar = () => {
     <AppBar position="static">
       <Container maxWidth="l" className='NavBar'>
         <Toolbar disableGutters>
-          <TsunamiIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <TsunamiIcon fontSize='large' sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h4"
             noWrap
