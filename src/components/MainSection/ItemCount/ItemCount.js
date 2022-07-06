@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState} from 'react';
-/* import CartContext from '../../../Context/CartContext';*/
 
 //Dependencies
 import { Button } from '@mui/material';

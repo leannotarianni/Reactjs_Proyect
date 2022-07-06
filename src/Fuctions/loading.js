@@ -1,4 +1,6 @@
+//Dependencies
 import { CircularProgress, Grid } from '@mui/material'
+//Style
 import './loading.scss'
 
 const Loading = () => {

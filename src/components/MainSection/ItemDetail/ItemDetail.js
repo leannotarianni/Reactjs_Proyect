@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import CartContext from '../../../Context/CartContext'
 import { Link } from 'react-router-dom';
 //Components
+import CartContext from '../../../Context/CartContext'
 import ItemCount from "../ItemCount/ItemCount"
 //dependencies
 import { Grid} from "@mui/material"

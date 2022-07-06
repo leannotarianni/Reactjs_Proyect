@@ -13,9 +13,7 @@ const CardListContainer =({category,title}) => {
     const [products, setProducts] = useState([])
     const [loading, setLoading]= useState(true)
 
-    // se muestre una sola vez
     useEffect(()=>{
-        //llamado promesa
         getProducts()
         .then( (response) => {
             setLoading(false)

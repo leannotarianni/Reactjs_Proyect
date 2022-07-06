@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
-import ResponsiveNavBar from './components/NavBar/NavBar';
 import { CartProvider } from './Context/CartContext';
 //Components
+import ResponsiveNavBar from './components/NavBar/NavBar';
 import Home from './Pages/Home';
 import Products from './Pages/Products';
 import DetailProducts from './Pages/DetailProducts';

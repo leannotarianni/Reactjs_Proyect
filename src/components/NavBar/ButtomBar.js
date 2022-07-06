@@ -1,9 +1,11 @@
 import * as React from 'react';
-import './buttom-bar.scss'
+import { Link } from 'react-router-dom';
+//Dependencies
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Link } from 'react-router-dom';
+//Style
+import './buttom-bar.scss'
 
 export default function ButtomBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);

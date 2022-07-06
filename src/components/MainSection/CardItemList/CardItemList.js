@@ -1,5 +1,7 @@
 import * as React from 'react';
+//Dependencies
 import {Grid} from '@mui/material';
+//Components
 import CardItem from '../Card/Card';
 
 

@@ -48,12 +48,6 @@ const Cart =()=> {
     const handleSubmit = (e) =>{
         e.preventDefault()
         validateEmail & validateName & validatePhone && setOrder({...order,buyer: formValue} & saveData({...order,buyer: formValue}) & console.log("orden sin errores",order))
-        
-        /* if (validateEmail === true){
-            setOrder({...order,buyer: formValue})
-            
-        }
-        console.log("orden sin errores",order) */
     }
 
     useEffect(() => {
@@ -62,15 +56,6 @@ const Cart =()=> {
         setValidatePhone(validator.isNumeric(formValue.phone))
     }, [formValue]);
     
-    /* const validation = () => {
-        setValidateEmail(validator.isEmail(formValue.email))
-        
-        setValidateName(validator.isAlpha(formValue.name))
-
-        setValidatePhone(validator.isNumeric(formValue.phone))
-
-    } */
-
     const handleChange = (e)=> {
         setFormValue({...formValue, [e.target.name]: e.target.value}) 
     }
@@ -182,7 +167,7 @@ const Cart =()=> {
                     name='name'
                     autoFocus
                     size='small'
-                    color="warning"
+                    color={validateName ? "success"  : "warning" }
                     margin="dense"
                     label="Complete Name"
                     required
@@ -197,7 +182,7 @@ const Cart =()=> {
                     name='phone'
                     autoFocus
                     size='small'
-                    color="warning"
+                    color={validatePhone ? "success"  : "warning" }
                     margin="dense"
                     label="Phone"
                     required
