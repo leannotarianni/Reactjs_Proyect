@@ -9,7 +9,7 @@ import ItemCount from '../ItemCount/ItemCount';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 //Style
-import './card.scss';
+import './Card.scss';
 
 
 const CardItem = ({data}) => {
