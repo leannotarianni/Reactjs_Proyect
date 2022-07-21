@@ -5,8 +5,8 @@ import {useState, useEffect} from 'react';
 import CardItemList from '../CardItemList/CardItemList';
 
 //Fuctions
-import getProducts from '../../../fuctions/getProducts';
-import Loading from '../../../fuctions/loading';
+import getProducts from '../../../Fuctions/getProducts';
+import Loading from '../../../Fuctions/loading';
 
 import './card-list-conteiner.scss'
 const CardListContainer =({category,title}) => {

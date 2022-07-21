@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 //Firebase
 import {addDoc,collection} from 'firebase/firestore'
-import db from '../data/firebaseconfig';
+import db from '../Data/firebaseconfig';
 //Components
 import CartContext from '../Context/CartContext';
 import ModalContact from '../components/ModalContact/ModalContact';

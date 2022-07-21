@@ -1,6 +1,6 @@
 //Firebase
 import { collection, getDocs } from "firebase/firestore";
-import db from "../data/firebaseconfig";
+import db from "../Data/firebaseconfig";
 
 const getProducts = async () =>{
     const productSnapshot = await getDocs(collection(db, "products"));

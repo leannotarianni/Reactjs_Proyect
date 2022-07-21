@@ -1,7 +1,7 @@
 // React
 import { createContext, useState , useEffect } from "react";
 //Functions
-import getProducts from "../fuctions/getProducts";
+import getProducts from "../Fuctions/getProducts";
 
 const CartContext = createContext()
 

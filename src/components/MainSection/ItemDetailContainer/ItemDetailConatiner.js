@@ -3,8 +3,8 @@ import { useParams } from "react-router-dom"
 // Components
 import ItemDetail from "../ItemDetail/ItemDetail"
 //Functions
-import getProduct from "../../../fuctions/getProduct"
-import Loading from "../../../fuctions/loading"
+import getProduct from "../../../Fuctions/getProduct"
+import Loading from "../../../Fuctions/loading"
 
 
 const ItemDetailContainer = () => {

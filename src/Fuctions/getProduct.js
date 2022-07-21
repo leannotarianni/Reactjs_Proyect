@@ -1,6 +1,6 @@
 //Firebase
 import { doc,getDoc } from "firebase/firestore";
-import db from "../data/firebaseconfig";
+import db from "../Data/firebaseconfig";
 
 const getProduct = async (id) =>{
     const docRef = doc(db, "products", id)
