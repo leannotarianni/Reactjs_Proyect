@@ -8,6 +8,7 @@ import ItemCount from '../ItemCount/ItemCount';
 // Dependencies
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import { Button } from '@mui/material';
 //Style
 import './Card.scss';
 
@@ -27,9 +28,9 @@ const CardItem = ({data}) => {
                     <div>
                       <img src={`/${image}`} className='sufrboards_img' alt={`./${title}`}/>
                     </div>
-                    <button><Link to={`/Product/${id}`} >Detail View</Link></button>
+                    <Button variant='outlined'  className='button-detail'><Link to={`/Product/${id}`} >Detail View</Link></Button>
                     <p>{title}</p>
-                    <span>${price} </span>
+                    <span>${price}</span>
                     <ItemCount data={data} onAdd={onAdd} />
                 </div>
             </CardContent>

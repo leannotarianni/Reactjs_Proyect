@@ -32,7 +32,7 @@ const ItemCount = ({data,onAdd}) => {
             <Button disableRipple onClick={addCount}>+</Button>
         </div>
         <div>
-        <Button onClick={()=> onAdd(data,quantity)} variant={'outlined'} className='buy_buttom'>Add to cart</Button>
+        <Button onClick={()=> onAdd(data,quantity)} variant={'contained'} className='buy_buttom'>Add to cart</Button>
         </div>
        </>
     )
