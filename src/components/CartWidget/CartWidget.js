@@ -5,7 +5,6 @@ import CartContext from '../../Context/CartContext';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Menu from '@mui/material/Menu';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Button } from '@mui/material';
 //Components
 import CartCount from './CartCount';
 //Style
@@ -39,7 +38,7 @@ const CartWidget =()=>{
                 onClick={handleClick}
             />
             <Menu
-                marginThreshold={60}
+                marginThreshold={30}
                 id="basic-menu"
                 anchorEl={anchorEl}
                 open={open}
@@ -53,14 +52,14 @@ const CartWidget =()=>{
                     <> 
                         <div className='conteiner-noproducts'>
                             <p>There are no products added to the cart</p>
-                            <Button className='button-start-buying-widget' variant='outlined'>
+                            <button className='button-start-buying-widget'>
                                 <Link to='/' >Start buying</Link>
-                            </Button>
+                            </button>
                         </div>  
                     </>
                 )}
                 {productsInCart.map( (item) => {
-                     return(
+                    return(
                     <div className='item-cart-prod' key={item.id}>
                         <div className='cart-prod__image'>
                             <img src={`/${item.image}`} alt="prod carrito" />
@@ -83,7 +82,7 @@ const CartWidget =()=>{
             </div>
             <div key={1} className='cart-buttons'>
                 <button onClick={clearCart}>
-                    clear
+                    Clear
                 </button>
                 <button>
                     <Link to='/Cart'>View Cart</Link>

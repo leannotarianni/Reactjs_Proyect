@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    
     .button-detail{
       border-color: rgba(34,193,195,1);
       height: 20px;
@@ -13,6 +14,7 @@
         font-weight: bold;
       }
     }
+
     button{
       margin-top: 5px;
     }

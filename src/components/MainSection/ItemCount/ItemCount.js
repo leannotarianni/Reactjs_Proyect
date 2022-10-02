@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { useState} from 'react';
 
-//Dependencies
-import { Button } from '@mui/material';
 //Style
 import './item-count.scss'
 
@@ -27,12 +25,12 @@ const ItemCount = ({data,onAdd}) => {
     return (
         <>
         <div className='item-count'>
-            <Button disableRipple onClick={removeCount} disabled={quantity === 1 }>-</Button>
+            <button disableRipple onClick={removeCount} disabled={quantity === 1 }>-</button>
             <p>{quantity}</p>
-            <Button disableRipple onClick={addCount}>+</Button>
+            <button disableRipple onClick={addCount}>+</button>
         </div>
         <div>
-        <Button onClick={()=> onAdd(data,quantity)} variant={'contained'} className='buy_buttom'>Add to cart</Button>
+        <button onClick={()=> onAdd(data,quantity)} variant={'contained'} className='buy_buttom'>Add to cart</button>
         </div>
        </>
     )

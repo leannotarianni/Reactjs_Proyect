@@ -75,12 +75,14 @@ const Cart =()=> {
     return(
         <Container className='general-container'>
         <div className='container-item-list-cart'>
-            {productsInCart.length === 0 && (
+            {productsInCart.length === 0 &&  (
                 <>
+                <div>
                     <p>There are no products added to the carto</p>
-                    <Button className='button-start-buying' variant='outlined'>
+                    <button className='button-start-buying' variant='outlined'>
                         <Link to='/' >start buying</Link>   
-                    </Button>
+                    </button>
+                </div>
                 </>
             )}
             {productsInCart.length !== 0 && (
@@ -96,7 +98,7 @@ const Cart =()=> {
             {productsInCart.map( (item) => {
                 return(
                 <div className='item-cart' key={item.id}>
-                    <div className='item-cart-mage'>
+                    <div className='item-cart-image'>
                         <img src={`/${item.image}`} alt="prod carrito" />
                     </div>
                     <div className='item-cart-title'>
@@ -120,16 +122,15 @@ const Cart =()=> {
             }
             {productsInCart.length !== 0 && ( 
             <div className='item-cart-footer'>
-                <button onClick={clearCart}>
+                <button className='item-cart-clear-button' onClick={clearCart}>
                     clear Cart
                 </button>
                 <div>
-                    <p>total: </p>
-                    <p>${totalPrice()}</p>
+                    <p>Total: ${totalPrice()}</p>
                 </div>
-                <Button variant={'outlined'} onClick={()=> setShowModal(true)}>
+                <button className='item-cart-chekout-button' onClick={()=> setShowModal(true)}>
                     Complete Check Out
-                </Button>
+                </button>
             </div>)
             }
         </div>
