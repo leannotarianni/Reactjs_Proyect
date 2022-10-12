@@ -46,13 +46,9 @@ const ResponsiveNavBar = () => {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 10000,
-              letterSpacing: '.1rem',
-              color: 'inherit',
               textDecoration: 'none',
             }}
-          ><Link to={'/'}>WAVELOOS</Link> 
+          ><Link to={'/'} className='title' >WAVELOOS</Link> 
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -90,7 +86,7 @@ const ResponsiveNavBar = () => {
               <Button><Link to={'/Help'} >Help</Link></Button>
             </Menu>
           </Box>
-          <TsunamiIcon sx={{ display: { xs: 'flex', md: 'none', }, mr: 1 ,fontSize:'large'}} />
+          <TsunamiIcon sx={{ display: { xs: 'flex', md: 'none', }, mr: 1 ,fontSize:'x-large'}} />
           <Typography
             variant="h5"
             noWrap
@@ -98,13 +94,8 @@ const ResponsiveNavBar = () => {
               mr: 2,
               display: { xs: 'flex', md: 'none',justifyContent: 'start' },
               flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 10000,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
             }}
-          ><Link to={'/'} >WAVELOOS</Link>
+          ><Link to={'/'} className='title-responsive' >WAVELOOS</Link>
           </Typography>
           
           <Box className='navbar-buttom-list' sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex',justifyContent: 'end' } }}>
