@@ -78,7 +78,7 @@ const Cart =()=> {
             {productsInCart.length === 0 &&  (
                 <>
                 <div>
-                    <p>There are no products added to the carto</p>
+                    <p>There are no products added to the cart</p>
                     <button className='button-start-buying' variant='outlined'>
                         <Link to='/' >start buying</Link>   
                     </button>
